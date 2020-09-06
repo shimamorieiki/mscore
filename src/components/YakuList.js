@@ -91,7 +91,7 @@ export default class YakuList extends React.Component {
                         <Yaku name="天和" text="平和なときにつく役" />
                     </Grid>
                     <Grid container spacing={10}>
-                        <Typograpy><h2>ダブル役満</h2></Typograpy>
+                        <Typograpy>ダブル役満</Typograpy>
                     </Grid>
                     <Grid container spacing={10}>
                         <Yaku name="四暗刻単騎" text="平和なときにつく役" />

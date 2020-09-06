@@ -7,8 +7,14 @@ import Grid from 'material-ui/Grid';
 import { Checkbox, FormControlLabel, List, ListItem } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import YakuGrid from './YakuGrid';
+import { store } from '../index';
 
 export default class Score extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = (store.getState()).Score
+
+    }
 
     // componentWillUnmount() {
     //     this.props.onMount(this.props);
@@ -22,8 +28,7 @@ export default class Score extends React.Component {
 
 
     render() {
-        const { han, fu, score, error } = this.props;
-        // const classes = useStyles();
+
         return (
             <div ref={this.wrapper}>
                 <Typography><h2>得点計算</h2></Typography>
@@ -40,36 +45,20 @@ export default class Score extends React.Component {
                         <ListItem>平和</ListItem>
                         <ListItem>一盃口</ListItem>
                     </List>
-                    <p>合計N翻</p>
+                    {(() => {
+                        if ((store.getState()).Score.han === "役満") {
+                            return <p>役満</p>
+                        } else if ((store.getState()).Score.han === "ダブル役満") {
+                            return <p>ダブル役満</p>
+                        } else if ((store.getState()).Score.han >= 13) {
+                            return <p>数え役満</p>
+                        } else {
+                            return <p>{(store.getState()).Score.han}翻</p>
+                        }
+                    })()}
                     <p>合計N符</p>
                 </div>
             </div >
         );
     }
 }
-
-// Score.propTypes = {
-//     onMount: PropTypes.func.isRequired,
-//     onUpdate: PropTypes.func.isRequired,
-
-//     category: PropTypes.shape({
-//         id: PropTypes.string.isRequired,
-//         name: PropTypes.string.isRequired,
-//     }),
-
-//     ranking: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             code: PropTypes.string.isRequired,
-//             name: PropTypes.string.isRequired,
-//             url: PropTypes.string.isRequired,
-//             imageUrl: PropTypes.string.isRequired,
-//         })
-//     ),
-
-//     error: PropTypes.bool.isRequired
-// };
-
-
-// Score.defaultProps = {
-//     categoryId: '1'
-// };

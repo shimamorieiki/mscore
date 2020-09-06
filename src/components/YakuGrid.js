@@ -13,24 +13,24 @@ export default class YakuGrid extends React.Component {
         return (
             <div>
                 <GridList cellHeight={160} cols={6}>
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
-                    <YakuGridTile name="平和" />
+                    <YakuGridTile name="平和" num='1' />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="1" />
+                    <YakuGridTile name="平和" num="2" />
+                    <YakuGridTile name="平和" num="2" />
+                    <YakuGridTile name="平和" num="2" />
+                    <YakuGridTile name="平和" num="2" />
+                    <YakuGridTile name="平和" num="2" />
                 </GridList>
             </div>
         );

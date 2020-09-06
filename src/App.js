@@ -8,6 +8,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import YakuList from './containers/YakuList';
 import FuList from './containers/FuList';
+
 class App extends Component {
 
   render() {
@@ -34,7 +35,7 @@ class App extends Component {
         </div>
       </div>
     );
-  }
+  };
 }
 
 export default App;

@@ -6,19 +6,22 @@ import { ConnectedRouter } from 'connected-react-router';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { configureStore, history } from './createStore';
+export const store = configureStore();
 
-const store = configureStore();
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
-    </Provider>
-  </React.StrictMode >,
-  document.getElementById('root')
-);
+function renderApp(store) {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </Provider>
+    </React.StrictMode >,
+    document.getElementById('root')
+  );
+}
+store.subscribe(() => renderApp(store));
+renderApp(store)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
