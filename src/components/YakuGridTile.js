@@ -12,17 +12,36 @@ import { addHan } from '../actions/Score';
 import { store } from '../index'
 
 export default class YakuGridTile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.counter = 0
+        this.style = { height: '100%', width: "100%", backgroundColor: "#fff0ff", }
+    }
 
-    handleCountButton = () => {
+    selected = () => {
+        this.counter = this.counter + 1
+        this.style = { height: '100%', width: "100%", backgroundColor: "#ff77ff" }
         store.dispatch(addHan(this.props.num))
+    }
+
+    unselected = () => {
+        this.counter = this.counter + 1
+        this.style = { height: '100%', width: "100%", backgroundColor: "#fff0ff" }
+        store.dispatch(addHan(-this.props.num))
     }
 
     render() {
         return (
             <div>
                 <GridListTile key={this.props.name} cols="" style={{ color: '#001100', backgroundColor: "ffeeff" }}>
-                    <Button style={{ height: '100%', width: "100%" }}
-                        onClick={this.handleCountButton}>{this.props.name}</Button>
+                    <Button style={this.style} centerRipple="True"
+                        onClick={(() => {
+                            if (this.counter % 2 === 0) {
+                                return this.selected;
+                            } else {
+                                return this.unselected;
+                            }
+                        })()}>{this.props.name}</Button>
                 </GridListTile>
             </div>);
     }

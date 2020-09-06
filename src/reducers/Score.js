@@ -14,12 +14,12 @@ export default function scoreReducer(state = initialState, action) {
             console.log(action.payload)
             return {
                 ...state,
-                han: state.han + 2
+                han: Number(state.han) + Number(action.payload.han)
             };
         case 'ADD_FU':
             return {
                 ...state,
-                fu: state.fu + action.payload
+                fu: Number(state.fu) + Number(action.payload.hu)
             };
         default:
             return state;
