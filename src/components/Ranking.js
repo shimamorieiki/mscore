@@ -10,18 +10,6 @@ export default class Ranking extends React.Component {
         this.props.onMount(this.props.categoryId);
     }
 
-    // componentWillMount() {
-    //     this.setState({
-    //         currentColor: this.props.defaultColor,
-    //         palette: 'rgb',
-    //     });
-    // }
-    // state = {
-    //     currentColor: this.props.defaultColor,
-    //     palette: 'rgb',
-    // };
-
-
     componentWillReceiveProps(nextProps) {
         if (this.props.categoryId !== nextProps.categoryId) {
             this.props.onUpdate(nextProps.categoryId);

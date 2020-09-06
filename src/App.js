@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Ranking from './containers/Ranking';
+// import Ranking from './containers/Ranking';
+import Score from './containers/Score';
 import Nav from './containers/Nav';
 import Reboot from 'material-ui/Reboot';
 import AppBar from 'material-ui/AppBar';
@@ -17,7 +18,7 @@ class App extends Component {
         <AppBar style={{ left: 240 }}>
           <Toolbar>
             <Typography type="title" color="inherit">
-              Yahooショップランキング
+              麻雀得点計算
             </Typography>
           </Toolbar>
         </AppBar>
@@ -25,11 +26,12 @@ class App extends Component {
         <Nav />
         <div style={{ marginTop: 64, padding: 32 }}>
           <Switch>
-            <Route path="/all" component={Ranking} />
-            <Route path="/category/1" render={() => <Redirect to="/all" />} />
+            <Route path="/all" component={Score} />
+            {/* <Route path="" component={}> */}
+            {/* <Route path="/category/1" render={() => <Redirect to="/all" />} />
             <Route path="/category/:id" render={
               ({ match }) => <Ranking categoryId={match.params.id} />
-            } />
+            } /> */}
           </Switch>
         </div>
       </div>
