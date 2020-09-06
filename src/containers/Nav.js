@@ -3,7 +3,7 @@ import Nav from '../components/Nav';
 import { push } from 'connected-react-router'
 
 const mapStateToProp = state => ({
-    categories: state.shopping.categories
+    // categories: state.shopping.categories
 });
 
 const mapDispatchToProps = dispatch => ({

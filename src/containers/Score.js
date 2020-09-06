@@ -1,21 +1,17 @@
 import { connect } from 'react-redux';
 import Score from '../components/Score';
-import * as actions from '../actions/Score';
+import { addHan, addFu } from '../actions/Score';
 
 const mapStateToProps = (state, ownProps) => ({
-    categoryId: ownProps.categoryId,
-    category: state.Ranking.category,
-    ranking: state.Ranking.ranking,
-    error: state.Ranking.error
+    han: state.Score.han,
+    fu: state.Score.fu,
+    score: state.Score.score,
+    error: state.Score.error
 });
 
 const mapDispatchToProps = dispatch => ({
-    onMount(categoryId) {
-        dispatch(actions.fetchRanking(categoryId));
-    },
-    onUpdate(categoryId) {
-        dispatch(actions.fetchRanking(categoryId));
-    }
+    addHan(han) { dispatch(addHan({ han })); },
+    addHu(fu) { dispatch(addFu({ fu })); }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Score);

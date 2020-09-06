@@ -4,39 +4,47 @@ import Drawer from 'material-ui/Drawer';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 
 
-export default function Nav({ categories, onClick }) {
-
-    const to = category => (
-        category.id === '1'
-            ? '/all'
-            : `category/${category.id}`
-    );
+export default function Nav({ onClick }) {
 
     return (
-        <Drawer type="permanent">
-            <List style={{ width: 240 }}>
-                {categories.map(category => (
+        <div>
+            <Drawer type='permanent'>
+                <List style={{ width: 240 }}>
                     <ListItem
                         button
-                        key={`nav-item-${category.id}`}
-                        onClick={() => onClick(to(category))}
+                        key={'点数計算'}
+                        onClick={() => onClick("/score")}
                     >
-                        <ListItemText primary={category.name} />
+                        <ListItemText primary={'点数計算'} />
                     </ListItem>
-
-                ))}
-            </List>
-        </Drawer>
+                    <ListItem
+                        button
+                        key={'役一覧'}
+                        onClick={() => onClick("/yaku")}
+                    >
+                        <ListItemText primary={'役一覧'} />
+                    </ListItem>
+                    <ListItem
+                        button
+                        key={'符計算一覧'}
+                        onClick={() => onClick("/hu")}
+                    >
+                        <ListItemText primary={'符計算一覧'} />
+                    </ListItem>
+                    <ListItem
+                        button
+                        key={'計算表'}
+                        onClick={() => onClick("/scoretable")}
+                    >
+                        <ListItemText primary={'計算表'} />
+                    </ListItem>
+                </List>
+            </Drawer>
+        </div>
     );
 
 }
 
 Nav.propTypes = {
-    categories: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired
-        })
-    ).isRequired,
     onClick: PropTypes.func.isRequired
 };

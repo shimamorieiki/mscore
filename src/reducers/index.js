@@ -1,14 +1,11 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-import { default as shopping } from './shopping';
-import { default as Ranking } from './Ranking';
+import { default as Score } from './Score';
 
 export const createRootReducer = (history) =>
     combineReducers({
         router: connectRouter(history),
-        shopping,
-        Ranking,
+        Score,
     });
 
-export { shopping };
-export { Ranking };
+export { Score };
