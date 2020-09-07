@@ -7,17 +7,12 @@ const initialState = {
     yakus: [],
     error: false
 };
-const removeYakuItem = (state, action) => {
-    const index = state.yakus.indexOf(action.payload.yaku)
-    console.log(index);
-    return state.yakus.splice(index, 1)
-}
+
 
 //Action はすべての Reducer に送られるため、関係のない Action の場合は現在の state を返してください。
 export default function scoreReducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_HAN':
-            console.log(action.payload)
             return {
                 ...state,
                 han: Number(state.han) + Number(action.payload.han)
@@ -35,7 +30,7 @@ export default function scoreReducer(state = initialState, action) {
         case 'REMOVE_YAKUS':
             return {
                 ...state,
-                yakus: removeYakuItem(state, action)
+                yaskus: state.yakus.splice(state.yakus.indexOf(action.payload.yaku), 1)
             };
         default:
             return state;

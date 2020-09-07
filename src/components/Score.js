@@ -33,27 +33,43 @@ export default class Score extends React.Component {
                 <Typography><h2>得点計算</h2></Typography>
                 {/* 役が一つ選択されたときに同時に成立し得ない役は非表示になる */}
                 <div>
-                    <Typography><h3>成立した役を選んでください</h3></Typography>
-                    <YakuGrid />
-                    <Typography><h3>符の計算をします</h3></Typography>
-                    {/* 役が確定すればある程度符は決まるはず */}
-                </div >
-                <div>
-                    <p>現在の役は</p>
-                    <List>{listItem}</List>
+                    {(() => {
+                        if ((store.getState()).Score.han === 0) {
+                            return <Typography><h3>成立した役を選んでください</h3></Typography>
+                        } else {
+                            return <List>{listItem}</List>
+                        }
+                    })()}
 
                     {(() => {
-                        if ((store.getState()).Score.han === "役満") {
-                            return <p>役満</p>
-                        } else if ((store.getState()).Score.han === "ダブル役満") {
+                        if ((store.getState()).Score.han >= 600) {
+                            return <p>六倍役満</p>
+                        } else if ((store.getState()).Score.han >= 500) {
+                            return <p>五倍役満</p>
+                        } else if ((store.getState()).Score.han >= 400) {
+                            return <p>四倍役満</p>
+                        } else if ((store.getState()).Score.han >= 300) {
+                            return <p>トリプル役満</p>
+                        } else if ((store.getState()).Score.han >= 200) {
                             return <p>ダブル役満</p>
+                        } else if ((store.getState()).Score.han >= 100) {
+                            return <p>役満</p>
                         } else if ((store.getState()).Score.han >= 13) {
                             return <p>数え役満</p>
                         } else {
                             return <p>{(store.getState()).Score.han}翻</p>
                         }
                     })()}
-                    <p>合計N符</p>
+                    <YakuGrid />
+                </div >
+                <div>
+                    {(() => {
+                        if ((store.getState()).Score.fu === 0) {
+                            return <Typography><h3>符の計算をしてください</h3></Typography>
+                        } else {
+                            return <p>合計N符</p>
+                        }
+                    })()}
                 </div>
             </div >
         );

@@ -8,6 +8,11 @@ export const addHan = (han) => ({
     payload: { han },
 });
 
+export const subHan = (han) => ({
+    type: 'SUB_HAN',
+    payload: { han },
+});
+
 export const addFu = (fu) => ({
     type: 'ADD_Fu',
     payload: { fu },
