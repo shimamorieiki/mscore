@@ -15,19 +15,20 @@ export default class YakuGridTile extends React.Component {
     constructor(props) {
         super(props);
         this.counter = 0
-        this.style = { height: '100%', width: "100%", backgroundColor: "#fff0ff", }
+        this.state = { bgc: "#fff0ff" }
+        this.style = { height: '100%', width: "100%", backgroundColor: this.state.bgc }
     }
 
     selected = () => {
         this.counter = this.counter + 1
-        this.style = { height: '100%', width: "100%", backgroundColor: "#ff77ff" }
+        this.setState({ bgc: "#ff77ff" })
         store.dispatch(addYakus(this.props.name))
         store.dispatch(addHan(this.props.num))
     }
 
     unselected = () => {
         this.counter = this.counter + 1
-        this.style = { height: '100%', width: "100%", backgroundColor: "#fff0ff" }
+        this.setState({ bgc: "#fff0ff" })
         store.dispatch(removeYakus(this.props.name))
         store.dispatch(addHan(-this.props.num))
     }

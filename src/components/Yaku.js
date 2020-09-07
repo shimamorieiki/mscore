@@ -5,11 +5,12 @@ import Typograpy from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 
 export default class Yaku extends React.Component {
+
     render() {
         return (
             <Grid item xs={3}>
                 <Card
-                    key={"pinhu"}
+                    key={this.props.name}
                     style={{ maxWidth: '500px', maxHeight: '200px', margin: '32px auto' }}
                 >
                     <CardContent>

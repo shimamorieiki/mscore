@@ -8,6 +8,7 @@ import { Checkbox, FormControlLabel, List, ListItem } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import YakuGrid from './YakuGrid';
 import { store } from '../index';
+import FuGrid from './Fugrid';
 
 export default class Score extends React.Component {
 
@@ -70,6 +71,7 @@ export default class Score extends React.Component {
                             return <p>合計N符</p>
                         }
                     })()}
+                    {/* <FuGrid /> */}
                 </div>
             </div >
         );
