@@ -12,3 +12,12 @@ export const addFu = (fu) => ({
     type: 'ADD_Fu',
     payload: { fu },
 });
+export const addYakus = (yaku) => ({
+    type: 'ADD_YAKUS',
+    payload: { yaku },
+});
+
+export const removeYakus = (yaku) => ({
+    type: 'REMOVE_YAKUS',
+    payload: { yaku },
+});

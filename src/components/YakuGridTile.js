@@ -8,7 +8,7 @@ import { Checkbox, FormControlLabel } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import { createStore } from 'redux'
 import scoreReducer from '../reducers/Score'
-import { addHan } from '../actions/Score';
+import { addHan, addYakus, removeYakus } from '../actions/Score';
 import { store } from '../index'
 
 export default class YakuGridTile extends React.Component {
@@ -21,12 +21,14 @@ export default class YakuGridTile extends React.Component {
     selected = () => {
         this.counter = this.counter + 1
         this.style = { height: '100%', width: "100%", backgroundColor: "#ff77ff" }
+        store.dispatch(addYakus(this.props.name))
         store.dispatch(addHan(this.props.num))
     }
 
     unselected = () => {
         this.counter = this.counter + 1
         this.style = { height: '100%', width: "100%", backgroundColor: "#fff0ff" }
+        store.dispatch(removeYakus(this.props.name))
         store.dispatch(addHan(-this.props.num))
     }
 

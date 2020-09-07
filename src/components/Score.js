@@ -10,11 +10,6 @@ import YakuGrid from './YakuGrid';
 import { store } from '../index';
 
 export default class Score extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = (store.getState()).Score
-
-    }
 
     // componentWillUnmount() {
     //     this.props.onMount(this.props);
@@ -28,9 +23,13 @@ export default class Score extends React.Component {
 
 
     render() {
+        const listItem = (store.getState()).Score.yakus.map((yaku) =>
+            <ListItem>{yaku}</ListItem>
+        );
+        // const { category, ranking, error } = this.props;
 
         return (
-            <div ref={this.wrapper}>
+            <div ref={this.wrapper} >
                 <Typography><h2>得点計算</h2></Typography>
                 {/* 役が一つ選択されたときに同時に成立し得ない役は非表示になる */}
                 <div>
@@ -38,13 +37,11 @@ export default class Score extends React.Component {
                     <YakuGrid />
                     <Typography><h3>符の計算をします</h3></Typography>
                     {/* 役が確定すればある程度符は決まるはず */}
-                </div>
+                </div >
                 <div>
                     <p>現在の役は</p>
-                    <List>
-                        <ListItem>平和</ListItem>
-                        <ListItem>一盃口</ListItem>
-                    </List>
+                    <List>{listItem}</List>
+
                     {(() => {
                         if ((store.getState()).Score.han === "役満") {
                             return <p>役満</p>
@@ -61,4 +58,5 @@ export default class Score extends React.Component {
             </div >
         );
     }
+
 }
