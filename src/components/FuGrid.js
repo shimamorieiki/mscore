@@ -10,7 +10,8 @@ import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import FuGridTile from './FuGridTile'
 import Hora from './Hora'
 import { store } from '../index';
-import { addFu } from '../actions/Score'
+// import { addFu } from '../actions/Score'
+import Mentu from './Mentu'
 
 export default class FuGrid extends React.Component {
     render() {
@@ -21,7 +22,7 @@ export default class FuGrid extends React.Component {
             <div>
                 {(() => {
                     var result = (store.getState()).Score.yakus.some(function (value) {
-                        return value === "門前清自摸和";
+                        return value === "門前清自摸和" || value === "海底撈月" || value === "嶺上開花"
                     });
                     if (!result) {
                         return (
@@ -31,28 +32,21 @@ export default class FuGrid extends React.Component {
                             </div>
                         )
                     }
-
                 })()}
 
-
-                {/* <Grid container spacing={10}>
-                    <Typograpy><h2>2 ～8 の中張牌</h2></Typograpy>
-                </Grid> */}
-                <Typograpy type="headline">面子の種類</Typograpy>
-                <Grid container spacing={10}>
-                    <ButtonGroup color="primary" aria-label="outlined primary button group">
-                        <FuGridTile name="順子" fu="0" />
-                        <FuGridTile name="明刻1" fu="2" />
-                        <FuGridTile name="暗刻1" fu="4" />
-                        <FuGridTile name="明槓1" fu="8" />
-                        <FuGridTile name="暗槓1" fu="16" />
-                        <FuGridTile name="明刻" fu="4" />
-                        <FuGridTile name="暗刻" fu="8" />
-                        <FuGridTile name="明槓" fu="16" />
-                        <FuGridTile name="暗槓" fu="32" />
-                    </ButtonGroup>
-
-                </Grid>
+                {(() => {
+                    var result = (store.getState()).Score.yakus.some(function (value) {
+                        return value === "二盃口";
+                    });
+                    if (!result) {
+                        return (
+                            <div>
+                                <Typograpy type="headline">面子の種類</Typograpy>
+                                <Mentu />
+                            </div>
+                        )
+                    }
+                })()}
                 {/* <Grid container spacing={10}>
                     <Typograpy><h2>1・9・字牌の幺九牌</h2></Typograpy>
                 </Grid> */}
