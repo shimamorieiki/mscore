@@ -14,7 +14,7 @@ export const subHan = (han) => ({
 });
 
 export const addFu = (fu) => ({
-    type: 'ADD_Fu',
+    type: 'ADD_FU',
     payload: { fu },
 });
 export const addYakus = (yaku) => ({

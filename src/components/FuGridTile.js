@@ -8,10 +8,10 @@ import { Checkbox, FormControlLabel } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import { createStore } from 'redux'
 import scoreReducer from '../reducers/Score'
-import { addHan, addYakus, removeYakus } from '../actions/Score';
+import { addFu } from '../actions/Score';
 import { store } from '../index'
 
-export default class YakuGridTile extends React.Component {
+export default class FuGridTile extends React.Component {
     constructor(props) {
         super(props);
         this.counter = 0
@@ -23,21 +23,20 @@ export default class YakuGridTile extends React.Component {
         // setStateを使うときは自分が変化させたいものだけ
         // this.stateに入れておけばsetStateを使うことで実現できる
         this.setState({ backgroundColor: "#ff77ff" });
-        store.dispatch(addYakus(this.props.name))
-        store.dispatch(addHan(this.props.num))
+        store.dispatch(addFu(this.props.fu))
+        console.log(this.props.fu);
     }
 
     unselected = () => {
         this.counter = this.counter + 1
         this.setState({ backgroundColor: "#fff0ff" });
-        store.dispatch(removeYakus(this.props.name))
-        store.dispatch(addHan(-this.props.num))
+        store.dispatch(addFu(-this.props.fu))
     }
 
     render() {
         return (
             <div>
-                <GridListTile key={this.props.name} cols="" style={{ color: '#001100', backgroundColor: "#ffeeff" }}>
+                <GridListTile key={this.props.name} cols="" style={{ color: '#001100', backgroundColor: "#ffeeff", listStyle: "none" }}>
                     <Button style={{ height: '100%', width: "100%", backgroundColor: this.state.backgroundColor }} centerRipple="True"
                         onClick={(() => {
                             if (this.counter % 2 === 0) {
@@ -47,6 +46,6 @@ export default class YakuGridTile extends React.Component {
                             }
                         })()}>{this.props.name}</Button>
                 </GridListTile>
-            </div>);
+            </div >);
     }
 }

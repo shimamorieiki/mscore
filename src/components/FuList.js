@@ -27,17 +27,9 @@ export default class FuList extends React.Component {
                         <Typograpy><h1>基礎点</h1></Typograpy>
                     </Grid>
                     <Grid container spacing={10}>
-                        <Grid item xs={3}>
-                            <Card
-                                key={""}
-                                style={{ maxWidth: '500px', maxHeight: '200px', margin: '32px auto' }}
-                            >
-                                <CardContent>
-                                    <Typograpy type="title">基礎点 20符</Typograpy>
-                                    <p></p>
-                                </CardContent>
-                            </Card>
-                        </Grid>
+                        <Fu name="基礎点" text="アガれば必ず付く" fu="20" />
+                        <Fu name="ピンフツモ" text="アガれば必ず付く" fu="20" />
+                        <Fu name="七対子" text="アガれば必ず付く" fu="20" />
                     </Grid>
                     <Grid container spacing={10}>
                         <Typograpy><h1>アガり方</h1></Typograpy>
@@ -45,6 +37,16 @@ export default class FuList extends React.Component {
                     <Grid container spacing={10}>
                         <Fu name="面前ロン" text="鳴いていない状態でロンアガリ" fu="10" />
                         <Fu name="ツモ" text="自分で引いて上がる" fu="2" />
+                        <Fu name="鳴いてロン" text="鳴いた状態でロンアガリ" fu="0" />
+                    </Grid>
+                    <Grid container spacing={10}>
+                        <Typograpy><h1>面子の種類</h1></Typograpy>
+                    </Grid>
+                    <Grid container spacing={10}>
+                        <Typograpy><h2>数牌</h2></Typograpy>
+                    </Grid>
+                    <Grid container spacing={10}>
+                        <Fu name="順子" text="鳴いても鳴かなくても順子" fu="2" />
                     </Grid>
                     <Grid container spacing={10}>
                         <Typograpy><h2>2 ～8 の中張牌</h2></Typograpy>
@@ -85,7 +87,7 @@ export default class FuList extends React.Component {
                         <Fu name="カンチャン待ち" text="カンチャン待ち" fu="2" />
                         <Fu name="単騎待ち" text="単騎待ち" fu="2" />
                         <Fu name="ノベタン" text="ノベタン" fu="2" />
-                        <Fu name="多面待ち" text="リャンメン待ち以外に解釈できれば2符" fu="0or2" />
+                        <Fu name="多面待ち" text="両面待ち以外に解釈できれば2符" fu="0or2" />
                     </Grid>
                 </div>
             </div>

@@ -20,7 +20,7 @@ export default function scoreReducer(state = initialState, action) {
         case 'ADD_FU':
             return {
                 ...state,
-                fu: Number(state.fu) + Number(action.payload.hu)
+                fu: Number(state.fu) + Number(action.payload.fu)
             };
         case 'ADD_YAKUS':
             return {
