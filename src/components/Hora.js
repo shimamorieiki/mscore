@@ -7,14 +7,23 @@ import ButtonGroup from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 import { Checkbox, FormControlLabel, List } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
-import FuGridTile from './FuGridTile'
+import HoraGridTile from './HoraGridTile'
 
 export default class Hora extends React.Component {
     constructor(props) {
         super(props);
-        this.counter = 0
-        this.state = { backgroundColor: "#fff0ff" }
+        this.state = { naki: undefined, isSelectRon: false, isSelectTumo: false, bgcRon: "#eeffff", bgcTumo: "#eeffff" }
+        console.log(this.state);
     }
+
+    RonIsSelected = () => {
+        this.setState({ isSelectRon: true, isSelectTumo: false, bgcRon: "#ffff0f", bgcTumo: "#eeffff" });
+    }
+
+    TumoIsSelected = () => {
+        this.setState({ isSelectRon: false, isSelectTumo: true, bgcRon: "#eeffff", bgcTumo: "#ffff0f" });
+    }
+
 
     render() {
         // 面子の種類以外は一つ選ぶと他が選べない
@@ -23,10 +32,8 @@ export default class Hora extends React.Component {
         return (
             <Grid container spacing={10}>
                 <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <FuGridTile name="面前ロン" fu="10" />
-                    <FuGridTile name="鳴いてロン" fu="0" />
-                    <FuGridTile name="ツモ" fu="2" />
-                    <FuGridTile name="鳴いてツモ" fu="2" />
+                    <HoraGridTile name="面前ロン" fu="10" isSelect={this.state.isSelectRon} selected={() => { this.RonIsSelected(); }} bgc={this.state.bgcRon} />
+                    <HoraGridTile name="ツモ" fu="2" isSelect={this.state.isSelectTumo} selected={() => { this.TumoIsSelected(); }} bgc={this.state.bgcTumo} />
                 </ButtonGroup>
             </Grid>)
     }

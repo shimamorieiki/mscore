@@ -9,6 +9,8 @@ import { Checkbox, FormControlLabel, List } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import FuGridTile from './FuGridTile'
 import Hora from './Hora'
+import { store } from '../index';
+import { addFu } from '../actions/Score'
 
 export default class FuGrid extends React.Component {
     render() {
@@ -17,8 +19,21 @@ export default class FuGrid extends React.Component {
 
         return (
             <div>
-                <Typograpy type="headline">アガり方</Typograpy>
-                <Hora />
+                {(() => {
+                    var result = (store.getState()).Score.yakus.some(function (value) {
+                        return value === "門前清自摸和";
+                    });
+                    if (!result) {
+                        return (
+                            <div>
+                                <Typograpy type="headline">アガり方</Typograpy>
+                                <Hora />
+                            </div>
+                        )
+                    }
+
+                })()}
+
 
                 {/* <Grid container spacing={10}>
                     <Typograpy><h2>2 ～8 の中張牌</h2></Typograpy>
