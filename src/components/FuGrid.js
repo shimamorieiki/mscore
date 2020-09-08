@@ -12,6 +12,8 @@ import Hora from './Hora'
 import { store } from '../index';
 // import { addFu } from '../actions/Score'
 import Mentu from './Mentu'
+import Janto from './Janto';
+import Mati from './Mati'
 
 export default class FuGrid extends React.Component {
     render() {
@@ -47,38 +49,34 @@ export default class FuGrid extends React.Component {
                         )
                     }
                 })()}
-                {/* <Grid container spacing={10}>
-                    <Typograpy><h2>1・9・字牌の幺九牌</h2></Typograpy>
-                </Grid> */}
-                {/* <Grid container spacing={10}>
-                    <FuGridTile name="明刻" text="鳴いて作った刻子" fu="4" />
-                    <FuGridTile name="暗刻" text="鳴かないで作った刻子" fu="8" />
-                    <FuGridTile name="明槓" text="鳴いて作った槓" fu="16" />
-                    <FuGridTile name="暗槓" text="鳴かないで作った槓" fu="32" />
-                </Grid> */}
 
-                <Typograpy type="headline">雀頭の牌の種類</Typograpy>
-                <Grid container spacing={10}>
-                    <ButtonGroup color="primary" aria-label="outlined primary button group">
-                        <FuGridTile name="数牌" text="各数牌" fu="0" />
-                        <FuGridTile name="オタ風牌" text="役がつかない字牌" fu="0" />
-                        <FuGridTile name="自風牌" text="現在の局における自分の風の風牌" fu="2" />
-                        <FuGridTile name="場風牌" text="現在の局における場と同じ風牌" fu="2" />
-                        <FuGridTile name="三元牌" text="白・発・中のいずれか" fu="2" />
-                    </ButtonGroup>
-                </Grid>
-                <Typograpy type="headline">待ち形の種類</Typograpy>
-                <Grid container spacing={10}>
-                    <ButtonGroup color="primary" aria-label="outlined primary button group">
-                        <FuGridTile name="両面待ち" text="両面待ち" fu="0" />
-                        <FuGridTile name="シャンポン待ち" text="シャンポン待ち" fu="2" />
-                        <FuGridTile name="ペンチャン待ち" text="ペンチャン待ち" fu="2" />
-                        <FuGridTile name="カンチャン待ち" text="カンチャン待ち" fu="2" />
-                        <FuGridTile name="単騎待ち" text="単騎待ち" fu="2" />
-                        <FuGridTile name="ノベタン" text="ノベタン" fu="2" />
-                        <FuGridTile name="多面待ち" text="リャンメン待ち以外に解釈できれば2符" fu="0or2" />
-                    </ButtonGroup>
-                </Grid>
+                {(() => {
+                    var result = (store.getState()).Score.yakus.some(function (value) {
+                        return value === "断么九" || value === "純全帯公九";
+                    });
+                    if (!result) {
+                        return (
+                            <div>
+                                <Typograpy type="headline">雀頭の牌の種類</Typograpy>
+                                <Janto />
+                            </div>
+                        )
+                    }
+                })()}
+
+                {(() => {
+                    var result = (store.getState()).Score.yakus.some(function (value) {
+                        return value === "平和";
+                    });
+                    if (!result) {
+                        return (
+                            <div>
+                                <Typograpy type="headline">待ち形の種類</Typograpy>
+                                <Mati />
+                            </div>
+                        )
+                    }
+                })()}
             </div>
         );
     }

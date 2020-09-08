@@ -16,6 +16,7 @@ export default class YakuGrid extends React.Component {
                     <YakuGridTile name="リーチ" num='1' />
                     <YakuGridTile name="一発" num="1" />
                     <YakuGridTile name="門前清自摸和" num="1" />
+                    <YakuGridTile name="平和" num='1' />
                     <YakuGridTile name="役牌" num="1" />
                     <YakuGridTile name="断么九" num="1" />
                     <YakuGridTile name="一盃口" num="1" />
