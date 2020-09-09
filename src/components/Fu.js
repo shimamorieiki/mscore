@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card, { CardMedia, CardContent, CardActions } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 import Typograpy from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 

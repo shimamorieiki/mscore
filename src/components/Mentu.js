@@ -30,20 +30,105 @@ export default class Mentu extends React.Component {
         // 面子の種類は複数選ぶことができるが全体で5つ以上は選べない
 
         return (
-            <Grid container spacing={10}>
-                <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <MentuGridTile name="順子" fu="0" />
-                    <MentuGridTile name="明刻1" fu="2" />
-                    <MentuGridTile name="暗刻1" fu="4" />
-                    <MentuGridTile name="明槓1" fu="8" />
-                    <MentuGridTile name="暗槓1" fu="16" />
-                    <MentuGridTile name="明刻" fu="4" />
-                    <MentuGridTile name="暗刻" fu="8" />
-                    <MentuGridTile name="明槓" fu="16" />
-                    <MentuGridTile name="暗槓" fu="32" />
-                </ButtonGroup>
+            <div style={{ margin: "2%" }}>
+                <Grid container style={{ width: "100%", height: "100%" }}>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%" }}><MentuGridTile name="順子" fu="0" /></Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={3}></Grid>
+                    <Grid item xs={3}></Grid>
+                    <Grid item xs={1}></Grid>
+                    <Grid item xs={4} style={{ backgroundColor: "#cccccc", textAlign: "center" }}><span>2~8</span></Grid>
+                    <Grid item xs={1}></Grid>
+                    <Grid item xs={1}></Grid>
+                    <Grid item xs={4} style={{ backgroundColor: "#cccccc", textAlign: "center" }}><span>1.9.字</span></Grid>
+                    <Grid item xs={1}></Grid>
 
-            </Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%" }}>
+                        <MentuGridTile name="明刻1" fu="2" />
+                    </Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%" }}>
+                        <MentuGridTile name="明刻2" fu="4" />
+                    </Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item xs={3} ><MentuGridTile name="暗刻1" fu="8" /></Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={3} ><MentuGridTile name="暗刻2" fu="16" /></Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={3} ><MentuGridTile name="明槓1" fu="4" /></Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={3} ><MentuGridTile name="明槓2" fu="8" /></Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={3} ><MentuGridTile name="暗槓1" fu="16" /></Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={3} ><MentuGridTile name="暗槓2" fu="32" /></Grid>
+                    <Grid item xs={3} style={{ width: "100%", height: "100%", marginTop: "1%" }}>
+                        <Grid container style={{ width: "100%", height: "100%", backgroundColor: "#fa43a0" }}>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>1</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>2</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>3</Grid>
+                            <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: "#00ffaa" }}>4</Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </div >
         )
     }
 }

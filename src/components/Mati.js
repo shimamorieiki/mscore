@@ -51,13 +51,7 @@ export default class Mati extends React.Component {
         // store.dispatch(matiFu(2))
     }
 
-    bgc(bool) {
-        if (bool) {
-            return "#ffff0f"
-        } else {
-            return "#eeffff"
-        }
-    }
+
 
 
 
@@ -67,17 +61,15 @@ export default class Mati extends React.Component {
         // 面子の種類は複数選ぶことができるが全体で5つ以上は選べない
 
         return (
-            <Grid container spacing={10}>
-                <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <MatiGridTile name="両面待ち" isSelect={this.state.ryan} selected={() => { this.Ryan(); }} bgc={this.bgc(this.state.ryan)} />
-                    <MatiGridTile name="シャンポン待ち" isSelect={this.state.shan} selected={() => { this.Shan(); }} bgc={this.bgc(this.state.shan)} />
-                    <MatiGridTile name="ペンチャン待ち" isSelect={this.state.pen} selected={() => { this.Pen(); }} bgc={this.bgc(this.state.pen)} />
-                    <MatiGridTile name="カンチャン待ち" isSelect={this.state.kan} selected={() => { this.Kan(); }} bgc={this.bgc(this.state.kan)} />
-                    <MatiGridTile name="単騎待ち" isSelect={this.state.tan} selected={() => { this.Tan(); }} bgc={this.bgc(this.state.tan)} />
-                    <MatiGridTile name="ノベタン" isSelect={this.state.nobe} selected={() => { this.Nobe(); }} bgc={this.bgc(this.state.nobe)} />
-                    <MatiGridTile name="多面待ち" isSelect={this.state.tamen} selected={() => { this.Tamen(); }} bgc={this.bgc(this.state.tamen)} />
-                    {/* 多面待ちの時は両面以外に解釈できるかを追加で出す */}
-                </ButtonGroup>
+            <Grid container spacing={3} style={{ margin: "2%" }}>
+                <Grid item xs={4} lg={4} style={{ width: "100%" }}><MatiGridTile name="両面待ち" isSelect={this.state.ryan} selected={() => { this.Ryan(); }} /></Grid>
+                <Grid item xs={4} lg={4} style={{ width: "100%" }}><MatiGridTile name="シャンポン待ち" isSelect={this.state.shan} selected={() => { this.Shan(); }} /></Grid>
+                <Grid item xs={4} lg={4} style={{ width: "100%" }}><MatiGridTile name="ペンチャン待ち" isSelect={this.state.pen} selected={() => { this.Pen(); }} /></Grid>
+                <Grid item xs={4} lg={4} style={{ width: "100%" }}><MatiGridTile name="カンチャン待ち" isSelect={this.state.kan} selected={() => { this.Kan(); }} /></Grid>
+                <Grid item xs={4} lg={4}><MatiGridTile name="単騎待ち" isSelect={this.state.tan} selected={() => { this.Tan(); }} /></Grid>
+                <Grid item xs={4} lg={4}><MatiGridTile name="ノベタン" isSelect={this.state.nobe} selected={() => { this.Nobe(); }} /></Grid>
+                <Grid item xs={4} lg={4}><MatiGridTile name="多面待ち" isSelect={this.state.tamen} selected={() => { this.Tamen(); }} /></Grid>
+                {/* 多面待ちの時は両面以外に解釈できるかを追加で出す */}
                 {(() => {
                     if (this.state.tamen) {
                         return (

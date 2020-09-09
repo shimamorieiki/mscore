@@ -41,11 +41,10 @@ export default class Hora extends React.Component {
         // 面子の種類は複数選ぶことができるが全体で5つ以上は選べない
 
         return (
-            <Grid container spacing={10}>
-                <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <HoraGridTile name="面前ロン" isSelect={this.state.ron} selected={() => { this.Ron(); }} bgc={this.bgc(this.state.ron)} />
-                    <HoraGridTile name="ツモ" isSelect={this.state.tumo} selected={() => { this.Tumo(); }} bgc={this.bgc(this.state.tumo)} />
-                </ButtonGroup>
-            </Grid>)
+            <Grid container spacing={10} style={{ margin: "2%" }}>
+                <HoraGridTile name="面前ロン" isSelect={this.state.ron} selected={() => { this.Ron(); }} bgc={this.bgc(this.state.ron)} />
+                <HoraGridTile name="ツモ" isSelect={this.state.tumo} selected={() => { this.Tumo(); }} bgc={this.bgc(this.state.tumo)} />
+            </Grid>
+        )
     }
 }

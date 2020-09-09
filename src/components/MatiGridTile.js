@@ -12,15 +12,20 @@ import { addFu } from '../actions/Score';
 import { store } from '../index'
 
 export default class MatiGridTile extends React.Component {
+    bgc(bool) {
+        if (bool) {
+            return "#ffff0f"
+        } else {
+            return "#eeffff"
+        }
+    }
 
     render() {
         return (
-            <div>
-                <GridListTile key={this.props.name} cols="" style={{ color: '#001100', backgroundColor: "#ffeeff", listStyle: "none" }}>
-                    <Button style={{ height: '100%', width: "100%", backgroundColor: this.props.bgc }} centerRipple="True"
-                        onClick={() => { this.props.selected(); }}>{this.props.name}</Button>
-                </GridListTile>
-            </div >
+            <Button style={{ height: '100%', width: "100%", marginTop: "0", backgroundColor: this.bgc(this.props.isSelect) }} centerRipple="True"
+                onClick={() => { this.props.selected(); }}>
+                {this.props.name}
+            </Button>
         );
     }
 }

@@ -53,57 +53,57 @@ export default class YakuGrid extends React.Component {
     render() {
         return (
             <div style={{ height: '100%', width: "100%", backgroundColor: "#ffffff" }}>
-                <Grid container spacing={0} style={{ width: "100%", backgroundColor: "#aaaaaa" }}>
-                    <Grid item xs={4}><YakuGridTile name="リーチ" num="1" /></Grid>
-                    <Grid item xs={4}>{this.ippatu()}</Grid>
-                    <Grid item xs={4}><YakuGridTile name="門前清自摸和" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="平和" num='1' /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="白" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="発" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="中" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="自風牌" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="場風牌" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="断么九" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="一盃口" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="海底撈月" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="河底撈魚" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="嶺上開花" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="槍槓" num="1" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="ダブル立直" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="三色同順" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="三色同刻" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="三暗刻" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="一気通貫" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="七対子" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="対々和" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="混全帯幺九" num="2" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="三槓子" num="2" /></Grid>
+                <Grid container spacing={0} style={{ width: "100%", height: '99%' }}>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="リーチ" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}>{this.ippatu()}</Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="門前清自摸和" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="平和" num='1' /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="白" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="発" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="中" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="自風牌" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="場風牌" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="断么九" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="一盃口" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="海底撈月" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="河底撈魚" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="嶺上開花" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="槍槓" num="1" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="ダブル立直" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="三色同順" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="三色同刻" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="三暗刻" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="一気通貫" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="七対子" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="対々和" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="混全帯幺九" num="2" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="三槓子" num="2" /></Grid>
 
-                    <Grid item xs={4}><YakuGridTile name="二盃口" num="3" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="純全帯公九" num="3" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="混一色" num="3" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="二盃口" num="3" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="純全帯公九" num="3" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="混一色" num="3" /></Grid>
 
-                    <Grid item xs={4}><YakuGridTile name="小三元" num="4" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="混老頭" num="4" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="小三元" num="4" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="混老頭" num="4" /></Grid>
 
-                    <Grid item xs={4}><YakuGridTile name="清一色" num="6" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="清一色" num="6" /></Grid>
 
-                    <Grid item xs={4}><YakuGridTile name="四暗刻" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="大三元" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="国士無双" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="緑一色" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="字一色" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="清老頭" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="四槓子" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="小四喜" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="九蓮宝燈" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="地和" num="100" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="天和" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="四暗刻" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="大三元" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="国士無双" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="緑一色" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="字一色" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="清老頭" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="四槓子" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="小四喜" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="九蓮宝燈" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="地和" num="100" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="天和" num="100" /></Grid>
 
-                    <Grid item xs={4}><YakuGridTile name="四暗刻単騎" num="200" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="国士13面待ち" num="200" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="純正九蓮宝燈" num="200" /></Grid>
-                    <Grid item xs={4}><YakuGridTile name="大四喜" num="200" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="四暗刻単騎" num="200" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="国士13面待ち" num="200" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="純正九蓮宝燈" num="200" /></Grid>
+                    <Grid item xs={4} style={{ marginTop: "1px" }} > <YakuGridTile name="大四喜" num="200" /></Grid>
                 </Grid>
             </div>
         );

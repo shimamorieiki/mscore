@@ -23,8 +23,11 @@ export default class FuGrid extends React.Component {
             return value === "門前清自摸和" || value === "海底撈月" || value === "嶺上開花"
         });
         if (!result) {
+            if (store.getState().Score.hora !== 0) {
+                store.dispatch(horaFu(0))
+            }
             return (
-                <div>
+                <div style={{ width: "100%", height: "100%" }}>
                     <Typograpy type="headline">アガり方</Typograpy>
                     <Hora />
                 </div>
@@ -42,7 +45,7 @@ export default class FuGrid extends React.Component {
         });
         if (!result) {
             return (
-                <div>
+                <div style={{ width: "100%", height: "100%" }}>
                     <Typograpy type="headline">面子の種類</Typograpy>
                     <Mentu />
                 </div>
@@ -60,7 +63,7 @@ export default class FuGrid extends React.Component {
         });
         if (!result) {
             return (
-                <div>
+                <div style={{ width: "100%", height: "100%" }}>
                     <Typograpy type="headline">雀頭の牌の種類</Typograpy>
                     <Janto />
                 </div>
@@ -78,7 +81,7 @@ export default class FuGrid extends React.Component {
         });
         if (!result) {
             return (
-                <div>
+                <div style={{ width: "100%", height: "100%" }}>
                     <Typograpy type="headline">待ち形の種類</Typograpy>
                     <Mati />
                 </div>
@@ -94,13 +97,17 @@ export default class FuGrid extends React.Component {
 
         return (
             <div>
-                {this.hora()}
+                {/* <Typograpy type="headline">アガり方</Typograpy> */}
+                <Hora />
 
-                {this.mentu()}
+                {/* <Typograpy type="headline">面子の種類</Typograpy> */}
+                <Mentu />
 
-                {this.janto()}
+                {/* <Typograpy type="headline">雀頭の牌の種類</Typograpy> */}
+                <Janto />
 
-                {this.mati()}
+                {/* <Typograpy type="headline">待ち形の種類</Typograpy> */}
+                <Mati />
 
             </div>
         );

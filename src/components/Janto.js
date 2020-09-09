@@ -55,14 +55,12 @@ export default class Janto extends React.Component {
         // 面子の種類は複数選ぶことができるが全体で5つ以上は選べない
 
         return (
-            <Grid container spacing={10}>
-                <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <JantoGridTile name="数牌" isSelect={this.state.num} selected={() => { this.Num(); }} bgc={this.bgc(this.state.num)} />
-                    <JantoGridTile name="オタ風牌" isSelect={this.state.ota} selected={() => { this.Ota(); }} bgc={this.bgc(this.state.ota)} />
-                    <JantoGridTile name="自風牌" isSelect={this.state.jifu} selected={() => { this.Jifu(); }} bgc={this.bgc(this.state.jifu)} />
-                    <JantoGridTile name="場風牌" isSelect={this.state.bafu} selected={() => { this.Bafu(); }} bgc={this.bgc(this.state.bafu)} />
-                    <JantoGridTile name="三元牌" isSelect={this.state.san} selected={() => { this.San(); }} bgc={this.bgc(this.state.san)} />
-                </ButtonGroup>
+            <Grid container spacing={10} style={{ margin: "2%" }}>
+                <JantoGridTile name="数牌" isSelect={this.state.num} selected={() => { this.Num(); }} bgc={this.bgc(this.state.num)} />
+                <JantoGridTile name="オタ風牌" isSelect={this.state.ota} selected={() => { this.Ota(); }} bgc={this.bgc(this.state.ota)} />
+                <JantoGridTile name="自風牌" isSelect={this.state.jifu} selected={() => { this.Jifu(); }} bgc={this.bgc(this.state.jifu)} />
+                <JantoGridTile name="場風牌" isSelect={this.state.bafu} selected={() => { this.Bafu(); }} bgc={this.bgc(this.state.bafu)} />
+                <JantoGridTile name="三元牌" isSelect={this.state.san} selected={() => { this.San(); }} bgc={this.bgc(this.state.san)} />
             </Grid>
         )
     }
