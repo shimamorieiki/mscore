@@ -8,20 +8,31 @@ import Grid from 'material-ui/Grid';
 import { Checkbox, FormControlLabel, List } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import HoraGridTile from './HoraGridTile'
+import { store } from '../index'
+import { horaFu } from '../actions/Score'
 
 export default class Hora extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { naki: undefined, isSelectRon: false, isSelectTumo: false, bgcRon: "#eeffff", bgcTumo: "#eeffff" }
-        console.log(this.state);
+        this.state = { menzen: undefined, ron: false, tumo: false }
     }
 
-    RonIsSelected = () => {
-        this.setState({ isSelectRon: true, isSelectTumo: false, bgcRon: "#ffff0f", bgcTumo: "#eeffff" });
+    bgc(bool) {
+        if (bool) {
+            return "#ffff0f"
+        } else {
+            return "#eeffff"
+        }
     }
 
-    TumoIsSelected = () => {
-        this.setState({ isSelectRon: false, isSelectTumo: true, bgcRon: "#eeffff", bgcTumo: "#ffff0f" });
+    Ron = () => {
+        this.setState({ menzen: true, ron: true, tumo: false });
+        store.dispatch(horaFu(10))
+    }
+
+    Tumo = () => {
+        this.setState({ ron: false, tumo: true });
+        store.dispatch(horaFu(2))
     }
 
 
@@ -32,8 +43,8 @@ export default class Hora extends React.Component {
         return (
             <Grid container spacing={10}>
                 <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <HoraGridTile name="面前ロン" fu="10" isSelect={this.state.isSelectRon} selected={() => { this.RonIsSelected(); }} bgc={this.state.bgcRon} />
-                    <HoraGridTile name="ツモ" fu="2" isSelect={this.state.isSelectTumo} selected={() => { this.TumoIsSelected(); }} bgc={this.state.bgcTumo} />
+                    <HoraGridTile name="面前ロン" isSelect={this.state.ron} selected={() => { this.Ron(); }} bgc={this.bgc(this.state.ron)} />
+                    <HoraGridTile name="ツモ" isSelect={this.state.tumo} selected={() => { this.Tumo(); }} bgc={this.bgc(this.state.tumo)} />
                 </ButtonGroup>
             </Grid>)
     }

@@ -36,7 +36,7 @@ export default class MentuGridTile extends React.Component {
     render() {
         return (
             <div>
-                <GridListTile key={this.props.name} cols="" style={{ color: '#001100', backgroundColor: "#ffeeff", listStyle: "none" }}>
+                <Grid item xs={6} sm={3} key={this.props.name} style={{ color: '#001100', backgroundColor: "#ffeeff", listStyle: "none" }}>
                     <Button style={{ height: '100%', width: "100%", backgroundColor: this.state.backgroundColor }} centerRipple="True"
                         onClick={(() => {
                             if (this.counter % 2 === 0) {
@@ -45,7 +45,7 @@ export default class MentuGridTile extends React.Component {
                                 return this.unselected;
                             }
                         })()}>{this.props.name}</Button>
-                </GridListTile>
+                </Grid>
             </div >);
     }
 }

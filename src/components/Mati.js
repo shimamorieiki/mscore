@@ -8,21 +8,58 @@ import Grid from 'material-ui/Grid';
 import { Checkbox, FormControlLabel, List } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import MatiGridTile from './MatiGridTile'
+import { store } from '../index'
+import { matiFu } from '../actions/Score'
 
 export default class Mati extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { naki: undefined, isSelectRon: false, isSelectTumo: false, bgcRon: "#eeffff", bgcTumo: "#eeffff" }
-        console.log(this.state);
+        this.state = { ryan: false, shan: false, pen: false, kan: false, tan: false, nobe: false, tamen: false }
     }
 
-    RonIsSelected = () => {
-        this.setState({ isSelectRon: true, isSelectTumo: false, bgcRon: "#ffff0f", bgcTumo: "#eeffff" });
+    Ryan = () => {
+        this.setState({ ryan: true, shan: false, pen: false, kan: false, tan: false, nobe: false, tamen: false });
+        store.dispatch(matiFu(0))
     }
 
-    TumoIsSelected = () => {
-        this.setState({ isSelectRon: false, isSelectTumo: true, bgcRon: "#eeffff", bgcTumo: "#ffff0f" });
+    Shan = () => {
+        this.setState({ ryan: false, shan: true, pen: false, kan: false, tan: false, nobe: false, tamen: false });
+        store.dispatch(matiFu(2))
     }
+
+    Pen = () => {
+        this.setState({ ryan: false, shan: false, pen: true, kan: false, tan: false, nobe: false, tamen: false });
+        store.dispatch(matiFu(2))
+    }
+
+    Kan = () => {
+        this.setState({ ryan: false, shan: false, pen: false, kan: true, tan: false, nobe: false, tamen: false });
+        store.dispatch(matiFu(2))
+    }
+
+    Tan = () => {
+        this.setState({ ryan: false, shan: false, pen: false, kan: false, tan: true, nobe: false, tamen: false });
+        store.dispatch(matiFu(2))
+    }
+    Nobe = () => {
+        this.setState({ ryan: false, shan: false, pen: false, kan: false, tan: false, nobe: true, tamen: false });
+        store.dispatch(matiFu(2))
+    }
+
+    Tamen = () => {
+        this.setState({ ryan: false, shan: false, pen: false, kan: false, tan: false, nobe: false, tamen: true });
+        // store.dispatch(matiFu(2))
+    }
+
+    bgc(bool) {
+        if (bool) {
+            return "#ffff0f"
+        } else {
+            return "#eeffff"
+        }
+    }
+
+
 
 
     render() {
@@ -32,14 +69,25 @@ export default class Mati extends React.Component {
         return (
             <Grid container spacing={10}>
                 <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <MatiGridTile name="両面待ち" text="両面待ち" fu="0" />
-                    <MatiGridTile name="シャンポン待ち" text="シャンポン待ち" fu="2" />
-                    <MatiGridTile name="ペンチャン待ち" text="ペンチャン待ち" fu="2" />
-                    <MatiGridTile name="カンチャン待ち" text="カンチャン待ち" fu="2" />
-                    <MatiGridTile name="単騎待ち" text="単騎待ち" fu="2" />
-                    <MatiGridTile name="ノベタン" text="ノベタン" fu="2" />
-                    <MatiGridTile name="多面待ち" text="リャンメン待ち以外に解釈できれば2符" fu="0or2" />
+                    <MatiGridTile name="両面待ち" isSelect={this.state.ryan} selected={() => { this.Ryan(); }} bgc={this.bgc(this.state.ryan)} />
+                    <MatiGridTile name="シャンポン待ち" isSelect={this.state.shan} selected={() => { this.Shan(); }} bgc={this.bgc(this.state.shan)} />
+                    <MatiGridTile name="ペンチャン待ち" isSelect={this.state.pen} selected={() => { this.Pen(); }} bgc={this.bgc(this.state.pen)} />
+                    <MatiGridTile name="カンチャン待ち" isSelect={this.state.kan} selected={() => { this.Kan(); }} bgc={this.bgc(this.state.kan)} />
+                    <MatiGridTile name="単騎待ち" isSelect={this.state.tan} selected={() => { this.Tan(); }} bgc={this.bgc(this.state.tan)} />
+                    <MatiGridTile name="ノベタン" isSelect={this.state.nobe} selected={() => { this.Nobe(); }} bgc={this.bgc(this.state.nobe)} />
+                    <MatiGridTile name="多面待ち" isSelect={this.state.tamen} selected={() => { this.Tamen(); }} bgc={this.bgc(this.state.tamen)} />
+                    {/* 多面待ちの時は両面以外に解釈できるかを追加で出す */}
                 </ButtonGroup>
+                {(() => {
+                    if (this.state.tamen) {
+                        return (
+                            <div>
+                                <p>this is tamenmati</p>
+                                <p>select next idea</p>
+                            </div>
+                        )
+                    }
+                })()}
             </Grid>
         )
     }

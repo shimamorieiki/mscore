@@ -12,13 +12,6 @@ import { addFu } from '../actions/Score';
 import { store } from '../index'
 
 export default class JantoGridTile extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { backgroundColor: "#ffff0f" }
-    // }
-    // isSelected() {
-    //     return this.props.selected();
-    // }
 
     render() {
 

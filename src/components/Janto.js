@@ -8,21 +8,46 @@ import Grid from 'material-ui/Grid';
 import { Checkbox, FormControlLabel, List } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import JantoGridTile from './JantoGridTile'
+import { store } from '../index'
+import { jantoFu } from '../actions/Score'
 
 export default class Janto extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { naki: undefined, isSelectRon: false, isSelectTumo: false, bgcRon: "#eeffff", bgcTumo: "#eeffff" }
-        console.log(this.state);
+        this.state = { num: false, ota: false, jifu: false, bafu: false, san: false }
     }
 
-    RonIsSelected = () => {
-        this.setState({ isSelectRon: true, isSelectTumo: false, bgcRon: "#ffff0f", bgcTumo: "#eeffff" });
+    Num = () => {
+        this.setState({ num: true, ota: false, jifu: false, bafu: false, san: false });
+        store.dispatch(jantoFu(0))
+
+    }
+    Ota = () => {
+        this.setState({ num: false, ota: true, jifu: false, bafu: false, san: false });
+        store.dispatch(jantoFu(0))
+    }
+    Jifu = () => {
+        this.setState({ num: false, ota: false, jifu: true, bafu: false, san: false });
+        store.dispatch(jantoFu(2))
+    }
+    Bafu = () => {
+        this.setState({ num: false, ota: false, jifu: false, bafu: true, san: false });
+        store.dispatch(jantoFu(2))
+    }
+    San = () => {
+        this.setState({ num: false, ota: false, jifu: false, bafu: false, san: true });
+        store.dispatch(jantoFu(2))
+        console.log(store.getState().Score);
     }
 
-    TumoIsSelected = () => {
-        this.setState({ isSelectRon: false, isSelectTumo: true, bgcRon: "#eeffff", bgcTumo: "#ffff0f" });
+    bgc(bool) {
+        if (bool) {
+            return "#ffff0f"
+        } else {
+            return "#eeffff"
+        }
     }
+
 
 
     render() {
@@ -30,20 +55,13 @@ export default class Janto extends React.Component {
         // 面子の種類は複数選ぶことができるが全体で5つ以上は選べない
 
         return (
-            // <Grid container spacing={10}>
-            //     <ButtonGroup color="primary" aria-label="outlined primary button group">
-            //         <HoraGridTile name="面前ロン" fu="10" isSelect={this.state.isSelectRon} selected={() => { this.RonIsSelected(); }} bgc={this.state.bgcRon} />
-            //         <HoraGridTile name="ツモ" fu="2" isSelect={this.state.isSelectTumo} selected={() => { this.TumoIsSelected(); }} bgc={this.state.bgcTumo} />
-            //     </ButtonGroup>
-            // </Grid>
-
             <Grid container spacing={10}>
                 <ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <JantoGridTile name="数牌" text="各数牌" fu="0" />
-                    <JantoGridTile name="オタ風牌" text="役がつかない字牌" fu="0" />
-                    <JantoGridTile name="自風牌" text="現在の局における自分の風の風牌" fu="2" />
-                    <JantoGridTile name="場風牌" text="現在の局における場と同じ風牌" fu="2" />
-                    <JantoGridTile name="三元牌" text="白・発・中のいずれか" fu="2" />
+                    <JantoGridTile name="数牌" isSelect={this.state.num} selected={() => { this.Num(); }} bgc={this.bgc(this.state.num)} />
+                    <JantoGridTile name="オタ風牌" isSelect={this.state.ota} selected={() => { this.Ota(); }} bgc={this.bgc(this.state.ota)} />
+                    <JantoGridTile name="自風牌" isSelect={this.state.jifu} selected={() => { this.Jifu(); }} bgc={this.bgc(this.state.jifu)} />
+                    <JantoGridTile name="場風牌" isSelect={this.state.bafu} selected={() => { this.Bafu(); }} bgc={this.bgc(this.state.bafu)} />
+                    <JantoGridTile name="三元牌" isSelect={this.state.san} selected={() => { this.San(); }} bgc={this.bgc(this.state.san)} />
                 </ButtonGroup>
             </Grid>
         )
