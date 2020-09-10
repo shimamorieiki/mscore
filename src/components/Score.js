@@ -89,7 +89,7 @@ export default class Score extends React.Component {
                             <FuGrid />
                         </Grid>
                         <Grid item xs={12} sm={12} lg={4}>
-                            <List>{listItem}</List>
+                            {/* <List>{listItem}</List> */}
                             <p>{(store.getState()).Score.han}翻</p>
                             <p>{(store.getState()).Score.fu}符</p>
                             <TotalScore />
