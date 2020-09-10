@@ -72,7 +72,7 @@ export default class TotalScore extends React.Component {
                             子 {Math.ceil(this.culcBaseScore() * 1 / 10) * 10}点
                         </TableCell>
                     </TableRow>
-                    <TableRow key="1">
+                    <TableRow key="2">
                         <TableCell component="th" scope="row">親</TableCell>
                         <TableCell align="right">
                             {Math.ceil(this.culcBaseScore() * 6 / 10) * 10}点
