@@ -65,20 +65,20 @@ export default class TotalScore extends React.Component {
                     <TableRow key="1">
                         <TableCell component="th" scope="row">子</TableCell>
                         <TableCell align="right">
-                            {Math.ceil(this.culcBaseScore() * 4 / 10) * 10}点
+                            {Math.ceil(this.culcBaseScore() * 4 / 100) * 100}点
                         </TableCell>
                         <TableCell align="right">
-                            親 {Math.ceil(this.culcBaseScore() * 2 / 10) * 10}点<br />
-                            子 {Math.ceil(this.culcBaseScore() * 1 / 10) * 10}点
+                            親 {Math.ceil(this.culcBaseScore() * 2 / 100) * 100}点<br />
+                            子 {Math.ceil(this.culcBaseScore() * 1 / 100) * 100}点
                         </TableCell>
                     </TableRow>
                     <TableRow key="2">
                         <TableCell component="th" scope="row">親</TableCell>
                         <TableCell align="right">
-                            {Math.ceil(this.culcBaseScore() * 6 / 10) * 10}点
+                            {Math.ceil(this.culcBaseScore() * 6 / 100) * 100}点
                         </TableCell>
                         <TableCell align="right">
-                            {Math.ceil(this.culcBaseScore() * 2 / 10) * 10}点
+                            {Math.ceil(this.culcBaseScore() * 2 / 100) * 100}点
                         </TableCell>
                     </TableRow>
                 </TableBody>
@@ -91,7 +91,36 @@ export default class TotalScore extends React.Component {
 
             <div>
                 <h3>支払い</h3>
-                {this.table()}
+                <Table aria-label="simple table" style={{ backgroundColor: "#ffffff", height: "100%" }}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>\</TableCell>
+                            <TableCell align="right">ロン</TableCell>
+                            <TableCell align="right">ツモ</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow key="1">
+                            <TableCell component="th" scope="row">子</TableCell>
+                            <TableCell align="right">
+                                {Math.ceil(this.culcBaseScore() * 4 / 100) * 100}点
+                        </TableCell>
+                            <TableCell align="right">
+                                親 {Math.ceil(this.culcBaseScore() * 2 / 100) * 100}点<br />
+                            子 {Math.ceil(this.culcBaseScore() * 1 / 100) * 100}点
+                        </TableCell>
+                        </TableRow>
+                        <TableRow key="2">
+                            <TableCell component="th" scope="row">親</TableCell>
+                            <TableCell align="right">
+                                {Math.ceil(this.culcBaseScore() * 6 / 100) * 100}点
+                        </TableCell>
+                            <TableCell align="right">
+                                {Math.ceil(this.culcBaseScore() * 2 / 100) * 100}点
+                        </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
             </div>
         );
     }

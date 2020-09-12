@@ -12,18 +12,19 @@ import MentuGridTile from './MentuGridTile'
 export default class MentuGridColorBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { box1: 0, box2: 0, box3: 0, box4: 0, count: this.props.count }
+        this.state = { count: this.props.count }
     }
 
     add = () => {
         this.setState({ count: Number(this.state.count) + 1 })
+        console.log("this.color.box", this.state.count);
     }
 
     setbgc = (num) => {
         if (num % 5 > this.state.count % 5) {
-            return "#ffffff"
+            return "inherit"
         } else {
-            return "#000000"
+            return "#aaaaaa"
         }
     }
 
@@ -34,9 +35,9 @@ export default class MentuGridColorBox extends React.Component {
         // 面子の種類は複数選ぶことができるが全体で5つ以上は選べない
 
         return (
-            <Grid container>
+            <Grid container >
                 <Grid item xs={6} style={{ width: "100%" }}>
-                    <MentuGridTile name={this.props.name} fu={this.props.fu} count={this.state.count} addcount={() => { this.add(); }} />
+                    <MentuGridTile color={this.props.color} name={this.props.name} fu={this.props.fu} count={this.state.count} addcount={() => { this.add(); }} />
                 </Grid>
                 <Grid item xs={6} style={{ width: "100%", marginTop: "2.5%", height: "60%" }}>
                     <Grid container style={{ width: "100%", height: "60%" }}>
