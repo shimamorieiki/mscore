@@ -59,7 +59,7 @@ class App extends Component {
         </SwipeableDrawer> */}
         <Nav />
 
-        <div style={{ marginTop: 50, padding: 32, /*marginLeft: 240 */ }}>
+        <div style={{ marginTop: 50, padding: 32, marginLeft: 240 }}>
           <Switch>
             <Route path="/" component={Score} />
             <Route path="/yaku" component={YakuList} />
