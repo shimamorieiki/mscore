@@ -16,49 +16,48 @@ import HeaderAndNav from './components/HeaderAndNav'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { open: true }
-    console.log(this.state.open);
-  }
+  // constructor() {
+  //   super();
+  //   this.state = { open: true }
+  //   console.log(this.state.open);
+  // }
 
-  Open() {
-    if (!this.state.open) {
-      return this.setState({ open: true })
-    }
+  // Open() {
+  //   if (!this.state.open) {
+  //     return this.setState({ open: true })
+  //   }
 
-  };
+  // };
 
-  Close() {
-    if (this.state.open) {
-      this.setState({ open: false })
-    }
+  // Close() {
+  //   if (this.state.open) {
+  //     this.setState({ open: false })
+  //   }
 
-  };
+  // };
 
   render() {
     return (
       <div className="App">
         <Reboot />
 
-        <AppBar >
+        <AppBar style={{ left: 240 }}>
           <Toolbar>
-            <IconButton style={{ color: "#ffffff" }} OnClick={() => console.log(this.state.open)}>
+            {/* <IconButton style={{ color: "#ffffff" }}>
               <MenuIcon />
-            </IconButton>
-
+            </IconButton> */}
             <Typography type="title" color="inherit">
               麻雀得点計算
             </Typography>
           </Toolbar>
         </AppBar>
 
-        <SwipeableDrawer
+        {/* <SwipeableDrawer
           anchor="left"
         >
           <Nav />
-        </SwipeableDrawer>
-        {/* <Nav /> */}
+        </SwipeableDrawer> */}
+        <Nav />
 
         <div style={{ marginTop: 50, padding: 32, /*marginLeft: 240 */ }}>
           <Switch>
