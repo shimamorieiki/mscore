@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/mscore/static/js/main.68edd877.chunk.js",
+    "main.js.map": "/mscore/static/js/main.68edd877.chunk.js.map",
+    "runtime-main.js": "/mscore/static/js/runtime-main.9ba0b520.js",
+    "runtime-main.js.map": "/mscore/static/js/runtime-main.9ba0b520.js.map",
+    "static/js/2.55c58589.chunk.js": "/mscore/static/js/2.55c58589.chunk.js",
+    "static/js/2.55c58589.chunk.js.map": "/mscore/static/js/2.55c58589.chunk.js.map",
+    "index.html": "/mscore/index.html",
+    "precache-manifest.d5685be9b6ebd891e6f532e6993f601e.js": "/mscore/precache-manifest.d5685be9b6ebd891e6f532e6993f601e.js",
+    "service-worker.js": "/mscore/service-worker.js",
+    "static/js/2.55c58589.chunk.js.LICENSE.txt": "/mscore/static/js/2.55c58589.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ba0b520.js",
+    "static/js/2.55c58589.chunk.js",
+    "static/js/main.68edd877.chunk.js"
+  ]
+}
