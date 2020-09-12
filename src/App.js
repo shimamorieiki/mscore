@@ -41,8 +41,8 @@ class App extends Component {
       <div className="App">
         <Reboot />
 
-        <AppBar >
-          <Toolbar /*style={{ marginLeft: 240 }}*/>
+        {/* <AppBar >
+          <Toolbar>
             <IconButton style={{ color: "#ffffff" }} OnClick={() => console.log(this.state.open)}>
               <MenuIcon />
             </IconButton>
@@ -55,20 +55,14 @@ class App extends Component {
 
         <SwipeableDrawer
           anchor="left"
-        // open={this.state.open}
-        // onClose={this.toggleDrawer(false)}
-        // onOpen={this.toggleDrawer(true)}
         >
-          <Nav
-          // onClick={this.Close()}
-          // onKeyDown={this.toggleDrawer(false)}
-          />
-        </SwipeableDrawer>
+          <Nav />
+        </SwipeableDrawer> */}
         {/* <Nav /> */}
 
         <div style={{ marginTop: 50, padding: 32, /*marginLeft: 240 */ }}>
           <Switch>
-            <Route path="/score" component={Score} />
+            <Route path="/" component={Score} />
             <Route path="/yaku" component={YakuList} />
             <Route path="/hu" component={FuList} />
             <Route path="/scoretable" component={CulcTable} />
