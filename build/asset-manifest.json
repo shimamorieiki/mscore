@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.a57d67dd.chunk.js",
-    "main.js.map": "/static/js/main.a57d67dd.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b407cf9d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b407cf9d.js.map",
-    "static/js/2.a1d7c487.chunk.js": "/static/js/2.a1d7c487.chunk.js",
-    "static/js/2.a1d7c487.chunk.js.map": "/static/js/2.a1d7c487.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.a188f594957bb435dd5abb1cee665b51.js": "/precache-manifest.a188f594957bb435dd5abb1cee665b51.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.a1d7c487.chunk.js.LICENSE.txt": "/static/js/2.a1d7c487.chunk.js.LICENSE.txt"
+    "main.js": "/mscore/static/js/main.419b4edf.chunk.js",
+    "main.js.map": "/mscore/static/js/main.419b4edf.chunk.js.map",
+    "runtime-main.js": "/mscore/static/js/runtime-main.9ba0b520.js",
+    "runtime-main.js.map": "/mscore/static/js/runtime-main.9ba0b520.js.map",
+    "static/js/2.4e5bcf56.chunk.js": "/mscore/static/js/2.4e5bcf56.chunk.js",
+    "static/js/2.4e5bcf56.chunk.js.map": "/mscore/static/js/2.4e5bcf56.chunk.js.map",
+    "index.html": "/mscore/index.html",
+    "precache-manifest.c353d4c4f0f7a0e5af0a43a1d307f22a.js": "/mscore/precache-manifest.c353d4c4f0f7a0e5af0a43a1d307f22a.js",
+    "service-worker.js": "/mscore/service-worker.js",
+    "static/js/2.4e5bcf56.chunk.js.LICENSE.txt": "/mscore/static/js/2.4e5bcf56.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b407cf9d.js",
-    "static/js/2.a1d7c487.chunk.js",
-    "static/js/main.a57d67dd.chunk.js"
+    "static/js/runtime-main.9ba0b520.js",
+    "static/js/2.4e5bcf56.chunk.js",
+    "static/js/main.419b4edf.chunk.js"
   ]
 }

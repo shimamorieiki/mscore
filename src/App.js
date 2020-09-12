@@ -9,24 +9,64 @@ import Typography from 'material-ui/Typography';
 import YakuList from './containers/YakuList';
 import FuList from './containers/FuList';
 import CulcTable from './containers/CulcTable';
+// import HomeIcon from '@material-ui/icons/Home';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import HeaderAndNav from './components/HeaderAndNav'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { open: true }
+    console.log(this.state.open);
+  }
+
+  Open() {
+    if (!this.state.open) {
+      return this.setState({ open: true })
+    }
+
+  };
+
+  Close() {
+    if (this.state.open) {
+      this.setState({ open: false })
+    }
+
+  };
 
   render() {
     return (
-      <div className="App" style={{ paddingLeft: 240 }}>
+      <div className="App">
         <Reboot />
 
-        <AppBar style={{ left: 240 }}>
-          <Toolbar>
+        <AppBar >
+          <Toolbar /*style={{ marginLeft: 240 }}*/>
+            <IconButton style={{ color: "#ffffff" }} OnClick={() => console.log(this.state.open)}>
+              <MenuIcon />
+            </IconButton>
+
             <Typography type="title" color="inherit">
               麻雀得点計算
             </Typography>
           </Toolbar>
         </AppBar>
 
-        <Nav />
-        <div style={{ marginTop: 50, padding: 32 }}>
+        <SwipeableDrawer
+          anchor="left"
+        // open={this.state.open}
+        // onClose={this.toggleDrawer(false)}
+        // onOpen={this.toggleDrawer(true)}
+        >
+          <Nav
+          // onClick={this.Close()}
+          // onKeyDown={this.toggleDrawer(false)}
+          />
+        </SwipeableDrawer>
+        {/* <Nav /> */}
+
+        <div style={{ marginTop: 50, padding: 32, /*marginLeft: 240 */ }}>
           <Switch>
             <Route path="/score" component={Score} />
             <Route path="/yaku" component={YakuList} />
@@ -34,7 +74,7 @@ class App extends Component {
             <Route path="/scoretable" component={CulcTable} />
           </Switch>
         </div>
-      </div>
+      </div >
     );
   };
 }
