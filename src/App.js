@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ paddingLeft: 240 }}>
         <Reboot />
 
         <AppBar style={{ left: 240 }}>
