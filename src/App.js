@@ -41,7 +41,7 @@ class App extends Component {
       <div className="App">
         <Reboot />
 
-        {/* <AppBar >
+        <AppBar >
           <Toolbar>
             <IconButton style={{ color: "#ffffff" }} OnClick={() => console.log(this.state.open)}>
               <MenuIcon />
@@ -57,7 +57,7 @@ class App extends Component {
           anchor="left"
         >
           <Nav />
-        </SwipeableDrawer> */}
+        </SwipeableDrawer>
         {/* <Nav /> */}
 
         <div style={{ marginTop: 50, padding: 32, /*marginLeft: 240 */ }}>
