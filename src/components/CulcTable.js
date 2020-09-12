@@ -117,8 +117,7 @@ export default class CulcTable extends React.Component {
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>跳満<br />(6/7翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>倍満<br />(8/9/10翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>三倍満<br />(11/12翻)</TableCell>
-                                <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>数え役満<br />(13翻)</TableCell>
-                                <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>役満</TableCell>
+                                <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>役満<br />(13翻~)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>N倍役満</TableCell>
                             </TableRow>
                         </TableHead>
@@ -129,7 +128,6 @@ export default class CulcTable extends React.Component {
                                 <TableCell align="right">12000<br />(6000/3000)</TableCell>
                                 <TableCell align="right">16000<br />(8000/4000)</TableCell>
                                 <TableCell align="right">24000<br />(12000/6000)</TableCell>
-                                <TableCell align="right">32000<br />(16000/8000)</TableCell>
                                 <TableCell align="right">32000<br />(16000/8000)</TableCell>
                                 <TableCell align="right">32000*N<br />(16000*N/8000*N)</TableCell>
                             </TableRow>
@@ -172,8 +170,7 @@ export default class CulcTable extends React.Component {
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>跳満<br />(6/7翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>倍満<br />(8/9/10翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>三倍満<br />(11/12翻)</TableCell>
-                                <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>数え役満<br />(13翻)</TableCell>
-                                <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>役満</TableCell>
+                                <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>役満<br />(13翻~)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>N倍役満</TableCell>
                             </TableRow>
                         </TableHead>
@@ -184,7 +181,6 @@ export default class CulcTable extends React.Component {
                                 <TableCell align="right">18000<br />(6000)</TableCell>
                                 <TableCell align="right">24000<br />(8000)</TableCell>
                                 <TableCell align="right">36000<br />(12000)</TableCell>
-                                <TableCell align="right">48000<br />(16000)</TableCell>
                                 <TableCell align="right">48000<br />(16000)</TableCell>
                                 <TableCell align="right">48000*N<br />(16000*N)</TableCell>
                             </TableRow>
