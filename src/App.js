@@ -96,7 +96,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+        textOverflow: "ellipsis"
+      }}>
         <Reboot />
         <HeaderAndNav />
         {/* <Nav /> */}
