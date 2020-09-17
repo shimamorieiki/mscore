@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Score from '../components/Score';
-import { addHan, addFu, addYakus, removeYakus, jantoFu, matiFu, horaFu } from '../actions/Score';
+import { addHan, addFu, addYakus, removeYakus, jantoFu, matiFu, horaFu, nakiTrue, nakiFalse } from '../actions/Score';
 
 const mapStateToProps = (state, ownProps) => ({
     han: state.Score.han,
@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
     hora: state.Score.hora,
     score: state.Score.score,
     error: state.Score.error,
+    naki: state.Score.naki,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -19,7 +20,9 @@ const mapDispatchToProps = dispatch => ({
     removeYakus(yaku) { dispatch(removeYakus({ yaku })); },
     jantoFu(janto) { dispatch(jantoFu({ janto })); },
     matiFu(mati) { dispatch(matiFu({ mati })); },
-    horaFu(hora) { dispatch(horaFu({ hora })); }
+    horaFu(hora) { dispatch(horaFu({ hora })); },
+    nakiTrue(naki) { dispatch(nakiTrue({ naki })); },
+    nakiFalse(naki) { dispatch(nakiFalse({ naki })); },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Score);

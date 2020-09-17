@@ -41,3 +41,13 @@ export const mentuFu = (mentu1, mentu2, mentu3, mentu4) => ({
     type: 'SELECT_MENTU',
     payload: { mentu1, mentu2, mentu3, mentu4 },
 });
+
+export const nakiTrue = (naki) => ({
+    type: 'TRUE_NAKI',
+    payload: { naki },
+});
+
+export const nakiFalse = (naki) => ({
+    type: 'FALSE_NAKI',
+    payload: { naki },
+});

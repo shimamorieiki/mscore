@@ -19,6 +19,47 @@ export default class TotalScore extends React.Component {
     culcBaseScore = () => {
         var han = Number((store.getState()).Score.han);
         var fu = Math.ceil(Number((store.getState()).Score.fu) / 10) * 10;
+
+        if ((store.getState()).Score.naki === true) {
+            // console.log("is this run?");
+            var result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "三色同順";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "一気通貫";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "混全帯幺九";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "純全帯公九";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "混一色";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "清一色";
+            });
+            if (result) {
+                han = han - 1
+            }
+        }
+
         if (han >= 600) {
             return 32000 * 6 / 4
         } else if (han >= 500) {
@@ -29,8 +70,6 @@ export default class TotalScore extends React.Component {
             return 32000 * 3 / 4
         } else if (han >= 200) {
             return 32000 * 2 / 4
-        } else if (han >= 100) {
-            return 32000 * 1 / 4
         } else if (han >= 13) {
             return 32000 * 1 / 4
         } else if (han >= 11) {
@@ -41,12 +80,23 @@ export default class TotalScore extends React.Component {
             return 12000 * 1 / 4
         } else if (han >= 5) {
             return 8000 * 1 / 4
+        } else if ((han >= 4 && fu >= 40) || (han >= 3 && fu >= 70)) {
+            return 8000 * 1 / 4
         } else {
-            var result = (store.getState()).Score.yakus.some(function (value) {
+            var result2 = (store.getState()).Score.yakus.some(function (value) {
                 return value === "七対子";
             });
-            if (result) {
+            if (result2) {
                 fu = 25
+            } else {
+                result2 = (store.getState()).Score.yakus.some(function (value) {
+                    return value === "平和";
+                });
+                if (result && (store.getState()).Score.yakus.length === 1 && fu === 20(store.getState()).Score.hora === 2) {
+                    fu = 20
+                } else {
+                    fu = 30
+                }
             }
             return fu * Math.pow(2, han + 2)
         }

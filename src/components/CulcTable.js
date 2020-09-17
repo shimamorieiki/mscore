@@ -68,7 +68,7 @@ export default class CulcTable extends React.Component {
 
     render() {
         return (
-            <div style={{ height: "100%" }}>
+            <div style={{ height: "100%", overflowX: "visible" }}>
                 <Tabs value={this.state.value}
                     onChange={this.handleChange}
                     aria-label="simple tabs example"
@@ -88,7 +88,7 @@ export default class CulcTable extends React.Component {
                     id="simple-tabpanel-$0"
                     aria-labelledby="simple-tab-$0"
                 >
-                    <Table aria-label="simple table" style={{ height: "100%" }}>
+                    <Table aria-label="simple table" style={{ height: "100%", width: "100%", overflowX: "visible" }}>
                         <TableHead>
                             <TableRow>
                                 <TableCell style={{ backgroundColor: "#bbbbbb", color: "#000000" }}>ロン<br />(ツモ 親/子)</TableCell>
@@ -109,10 +109,10 @@ export default class CulcTable extends React.Component {
                         </TableBody>
                     </Table>
 
-                    <Table aria-label="simple table" style={{ backgroundColor: "#ffffff", height: "100%", paddingTop: 2 }}>
+                    <Table aria-label="simple table" style={{ backgroundColor: "#ffffff", height: "100%", maxWidht: "100%", paddingTop: 2 }}>
                         <TableHead>
                             <TableRow>
-                                <TableCell style={{ backgroundColor: "#bbbbbb", color: "#000000" }}>ロン<br />(ツモ 親/子)</TableCell>
+                                {/* <TableCell style={{ backgroundColor: "#bbbbbb", color: "#000000" }}>ロン<br />(ツモ 親/子)</TableCell> */}
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>満貫<br />(3/4/5翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>跳満<br />(6/7翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>倍満<br />(8/9/10翻)</TableCell>
@@ -123,7 +123,7 @@ export default class CulcTable extends React.Component {
                         </TableHead>
                         <TableBody>
                             <TableRow>
-                                <TableCell style={{ backgroundColor: "#eeeeee", color: "#000000" }}>符に関係なく一定</TableCell>
+                                {/* <TableCell style={{ backgroundColor: "#eeeeee", color: "#000000" }}>符に関係なく一定</TableCell> */}
                                 <TableCell align="center">8000<br />(4000/2000)</TableCell>
                                 <TableCell align="right">12000<br />(6000/3000)</TableCell>
                                 <TableCell align="right">16000<br />(8000/4000)</TableCell>
@@ -162,10 +162,10 @@ export default class CulcTable extends React.Component {
                             })()}
                         </TableBody>
                     </Table>
-                    <Table aria-label="simple table" style={{ backgroundColor: "#ffffff", height: "100%" }}>
+                    <Table aria-label="simple table" style={{ backgroundColor: "#ffffff", height: "100%", maxWidth: "100%", }}>
                         <TableHead>
                             <TableRow>
-                                <TableCell style={{ backgroundColor: "#bbbbbb", color: "#000000" }}>ロン<br />(ツモ)</TableCell>
+                                {/* <TableCell style={{ backgroundColor: "#bbbbbb", color: "#000000" }}>ロン<br />(ツモ)</TableCell> */}
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>満貫<br />(3/4/5翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>跳満<br />(6/7翻)</TableCell>
                                 <TableCell align="right" style={{ backgroundColor: "#cccccc", color: "#000000" }}>倍満<br />(8/9/10翻)</TableCell>
@@ -176,7 +176,7 @@ export default class CulcTable extends React.Component {
                         </TableHead>
                         <TableBody>
                             <TableRow>
-                                <TableCell style={{ backgroundColor: "#eeeeee", color: "#000000" }}>符に関係なく一定</TableCell>
+                                {/* <TableCell style={{ backgroundColor: "#eeeeee", color: "#000000" }}>符に関係なく一定</TableCell> */}
                                 <TableCell align="center">12000<br />(4000)</TableCell>
                                 <TableCell align="right">18000<br />(6000)</TableCell>
                                 <TableCell align="right">24000<br />(8000)</TableCell>

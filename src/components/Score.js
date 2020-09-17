@@ -25,45 +25,109 @@ export default class Score extends React.Component {
     // }
 
     showHanAndFu = () => {
-        const han = Number((store.getState()).Score.han)
-        const fu = Number((store.getState()).Score.fu)
+        var han = Number((store.getState()).Score.han)
+        var fu = Number((store.getState()).Score.fu)
+
+        if ((store.getState()).Score.naki === true) {
+            // console.log("is this run?");
+            var result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "三色同順";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "一気通貫";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "混全帯幺九";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "純全帯公九";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "混一色";
+            });
+            if (result) {
+                han = han - 1
+            }
+            result = (store.getState()).Score.yakus.some(function (value) {
+                return value === "清一色";
+            });
+            if (result) {
+                han = han - 1
+            }
+
+            // if ("三色同順" in yakus) {
+            //     han = han - 1
+            // }
+            // if ("一気通貫" in yakus) {
+            //     han = han - 1
+            // }
+
+            // if ("混全帯幺九" in yakus) {
+            //     han = han - 1
+            // }
+
+            // if ("純全帯公九" in yakus) {
+            //     han = han - 1
+            // }
+            // if ("混一色" in yakus) {
+            //     han = han - 1
+            // }
+            // if ("清一色" in yakus) {
+            //     han = han - 1
+            // }
+        }
+        console.log(han);
 
         if (han >= 600) {
-            return "six"
+            return "六倍役満"
         } else if (han >= 500) {
-            return "six"
+            return "五倍役満"
         } else if (han >= 400) {
-            return "six"
+            return "四倍役満"
         } else if (han >= 300) {
-            return "six"
+            return "三倍役満"
         } else if (han >= 200) {
-            return "six"
+            return "ダブル役満"
         } else if (han >= 100) {
-            return "six"
+            return "役満"
         } else if (han >= 13) {
-            return "six"
+            return "数え役満 "
         } else if (han >= 11) {
-            return "six"
+            return "三倍満"
         } else if (han >= 8) {
-            return "six"
+            return "倍満"
         } else if (han >= 6) {
-            return "six"
+            return "跳満"
         } else if (han >= 5) {
-            return "six"
+            return "満貫"
         } else if (han >= 4) {
             if (fu >= 40) {
-                return "six"
+                return "満貫"
             } else {
-                return (han + "+" + fu)
+                return (han + "翻/" + fu + "符")
             }
         } else if (han >= 3) {
             if (fu >= 70) {
-                return "six"
+                return "満貫"
             } else {
-                return (han + "+" + fu)
+                return (han + "翻/" + fu + "符")
             }
-        } else {
-            return (han + "+" + fu)
+        } else if (han >= 1) {
+            return (han + "翻/" + fu + "符")
+        } else if (han === 0) {
+            return "成立した役を選んでください"
         }
     }
 
@@ -75,6 +139,9 @@ export default class Score extends React.Component {
         const listItem = (store.getState()).Score.yakus.map((yaku) =>
             <ListItem>{yaku}</ListItem>
         );
+        // if () {
+        //     store.dispatch(addHan(1))
+        // }
         return (
             <div ref={this.wrapper}>
                 <Typography><h2>得点計算</h2></Typography>
@@ -91,16 +158,9 @@ export default class Score extends React.Component {
                         <Grid item xs={12} sm={12} lg={4}>
                             {/* <List>{listItem}</List> */}
                             <p>{this.showHanAndFu()}</p>
-                            {/* <p>{(store.getState()).Score.fu}符</p> */}
                             {(() => {
-                                if ((store.getState()).Score.fu >= 20 && (store.getState()).Score.han >= 1) {
+                                if (Number((store.getState()).Score.han) >= 1) {
                                     return <TotalScore />
-                                } else if ((store.getState()).Score.fu < 20) {
-                                    return <p>calc fu</p>
-                                } else if ((store.getState()).Score.han < 1) {
-                                    return <p>calc han</p>
-                                } else {
-                                    return <p>calc both han and fu</p>
                                 }
                             })()}
                         </Grid>

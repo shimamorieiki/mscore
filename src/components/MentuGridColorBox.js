@@ -42,13 +42,13 @@ export default class MentuGridColorBox extends React.Component {
                 </Grid>
                 <Grid item xs={8} style={{ width: "100%", marginTop: "2.5%", height: "60%" }}>
                     <Grid container style={{ width: "100%", height: "60%" }}>
-                        <Grid item xs={3} style={{ width: "90%", height: "90%", backgroundColor: this.setbgc(1), textAlign: "center" }}>1</Grid>
+                        <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: this.setbgc(1), textAlign: "center" }}>1</Grid>
                         <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: this.setbgc(2), textAlign: "center" }}>2</Grid>
-                        <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: this.setbgc(3) }}>3</Grid>
-                        <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: this.setbgc(4) }}>4</Grid>
+                        <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: this.setbgc(3), textAlign: "center" }}>3</Grid>
+                        <Grid item xs={3} style={{ width: "100%", height: "100%", backgroundColor: this.setbgc(4), textAlign: "center" }}>4</Grid>
                     </Grid>
-                </Grid>
-            </Grid>
+                </Grid >
+            </Grid >
         );
     }
 }

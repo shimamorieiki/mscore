@@ -63,6 +63,7 @@ export default class Mentu extends React.Component {
                     <Grid item xs={6}>
                         <MentuGridColorBox name="順子" fu="0" count={this.state.cshun} color="#3f51b5" />
                     </Grid>
+                    <Grid item xs={6}> </Grid>
                 </Grid>
                 <Grid container style={{ width: "100%", height: "100%", marginTop: "1%", marginBottom: "1%" }}>
                     <Grid item xs={1}></Grid>

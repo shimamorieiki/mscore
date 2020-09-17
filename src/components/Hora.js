@@ -9,7 +9,7 @@ import { Checkbox, FormControlLabel, List } from 'material-ui';
 import { Switch, GridListTile, GridList, Typography } from 'material-ui';
 import HoraGridTile from './HoraGridTile'
 import { store } from '../index'
-import { horaFu } from '../actions/Score'
+import { horaFu, nakiFalse, nakiTrue } from '../actions/Score'
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
@@ -37,21 +37,25 @@ export default class Hora extends React.Component {
     mRon = () => {
         this.setState({ menzen: true, value: 0 });
         store.dispatch(horaFu(10))
+        store.dispatch(nakiFalse(false))
     }
 
     mTumo = () => {
         this.setState({ menzen: true, value: 1 });
         store.dispatch(horaFu(2))
+        store.dispatch(nakiFalse(false))
     }
 
     nRon = () => {
         this.setState({ menzen: false, value: 2 });
         store.dispatch(horaFu(0))
+        store.dispatch(nakiTrue(true))
     }
 
     nTumo = () => {
         this.setState({ menzen: false, value: 3 });
         store.dispatch(horaFu(2))
+        store.dispatch(nakiTrue(true))
     }
 
     change = (newValue) => {

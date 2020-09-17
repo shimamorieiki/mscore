@@ -26,36 +26,37 @@ export default class YakuGrid extends React.Component {
         return <YakuGridTile name="一発" num="1" disable={disable} />
     }
 
-    yakuhai() {
-        if (((store.getState()).Score.yakus).length !== 0) {
-            var result = (store.getState()).Score.yakus.some(function (value) {
-                return value === "役牌";
-            });
-            if (result) {
-                return (
-                    <div>
-                        <YakuGridTile name="白" num="1" />
-                        <YakuGridTile name="発" num="1" />
-                        <YakuGridTile name="中" num="1" />
-                        <YakuGridTile name="自風牌" num="1" />
-                        <YakuGridTile name="場風牌" num="1" />
-                    </div>
-                )
-            } else {
-                return <div></div>
-            }
+    // yakuhai() {
+    //     if (((store.getState()).Score.yakus).length !== 0) {
+    //         var result = (store.getState()).Score.yakus.some(function (value) {
+    //             return value === "役牌";
+    //         });
+    //         if (result) {
+    //             return (
+    //                 <div>
+    //                     <YakuGridTile name="白" num="1" />
+    //                     <YakuGridTile name="発" num="1" />
+    //                     <YakuGridTile name="中" num="1" />
+    //                     <YakuGridTile name="自風牌" num="1" />
+    //                     <YakuGridTile name="場風牌" num="1" />
+    //                 </div>
+    //             )
+    //         } else {
+    //             return <div></div>
+    //         }
 
-        } else {
-            return <div></div>
-        }
-    }
+    //     } else {
+    //         return <div></div>
+    //     }
+    // }
 
     render() {
         return (
             <div style={{ height: '100%', width: "100%", backgroundColor: "#ffffff" }}>
                 <Grid container spacing={0} style={{ width: "100%", height: '99%' }}>
                     <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="リーチ" num="1" /></Grid>
-                    <Grid item xs={4} style={{ marginTop: "1px" }}>{this.ippatu()}</Grid>
+                    {/* <Grid item xs={4} style={{ marginTop: "1px" }}>{this.ippatu()}</Grid> */}
+                    <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="一発" num="1" /></Grid>
                     <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="門前清自摸和" num="1" /></Grid>
                     <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="平和" num='1' /></Grid>
                     <Grid item xs={4} style={{ marginTop: "1px" }}><YakuGridTile name="白" num="1" /></Grid>
