@@ -61,7 +61,7 @@ export default class Mentu extends React.Component {
 
                 <Grid container style={{ marginTop: "1%", marginBottom: "1%" }} >
                     <Grid item xs={6}>
-                        <MentuGridColorBox name="順子" fu="0" count={this.state.cshun} color="primary" />
+                        <MentuGridColorBox name="順子" fu="0" count={this.state.cshun} color="#3f51b5" />
                     </Grid>
                 </Grid>
                 <Grid container style={{ width: "100%", height: "100%", marginTop: "1%", marginBottom: "1%" }}>
@@ -74,37 +74,37 @@ export default class Mentu extends React.Component {
                 </Grid>
                 <Grid container style={{ width: "100%", height: "100%", marginTop: "1%", marginBottom: "1%" }}>
                     <Grid item xs={6}>
-                        <MentuGridColorBox name="明刻" fu="2" count={this.state.cmko1} color="primary" />
+                        <MentuGridColorBox name="明刻" fu="2" count={this.state.cmko1} color="#3f51b5" />
                     </Grid>
                     <Grid item xs={6}>
-                        <MentuGridColorBox name="明刻" fu="4" count={this.state.cmko2} color="secondary" />
-                    </Grid>
-                </Grid>
-
-                <Grid container style={{ width: "100%", height: "100%", marginTop: "1%", marginBottom: "1%" }}>
-                    <Grid item xs={6}>
-                        <MentuGridColorBox name="暗刻" fu="8" count={this.state.cako1} color="primary" />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <MentuGridColorBox name="暗刻" fu="16" count={this.state.cako2} color="secondary" />
+                        <MentuGridColorBox name="明刻" fu="4" count={this.state.cmko2} color="#f50057" />
                     </Grid>
                 </Grid>
 
                 <Grid container style={{ width: "100%", height: "100%", marginTop: "1%", marginBottom: "1%" }}>
                     <Grid item xs={6}>
-                        <MentuGridColorBox name="明槓" fu="4" count={this.state.cmkan1} color="primary" />
+                        <MentuGridColorBox name="暗刻" fu="8" count={this.state.cako1} color="#3f51b5" />
                     </Grid>
                     <Grid item xs={6}>
-                        <MentuGridColorBox name="明槓" fu="8" count={this.state.cmkan2} color="secondary" />
+                        <MentuGridColorBox name="暗刻" fu="16" count={this.state.cako2} color="#f50057" />
                     </Grid>
                 </Grid>
 
                 <Grid container style={{ width: "100%", height: "100%", marginTop: "1%", marginBottom: "1%" }}>
                     <Grid item xs={6}>
-                        <MentuGridColorBox name="暗槓" fu="16" count={this.state.cakan1} color="primary" />
+                        <MentuGridColorBox name="明槓" fu="4" count={this.state.cmkan1} color="#3f51b5" />
                     </Grid>
                     <Grid item xs={6}>
-                        <MentuGridColorBox name="暗槓" fu="32" count={this.state.cakan2} color="secondary" />
+                        <MentuGridColorBox name="明槓" fu="8" count={this.state.cmkan2} color="#f50057" />
+                    </Grid>
+                </Grid>
+
+                <Grid container style={{ width: "100%", height: "100%", marginTop: "1%", marginBottom: "1%" }}>
+                    <Grid item xs={6}>
+                        <MentuGridColorBox name="暗槓" fu="16" count={this.state.cakan1} color="#3f51b5" />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <MentuGridColorBox name="暗槓" fu="32" count={this.state.cakan2} color="#f50057" />
                     </Grid>
                 </Grid>
             </div >

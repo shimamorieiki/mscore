@@ -44,15 +44,31 @@ export default class MentuGridTile extends React.Component {
 
     render() {
         return (
-            <Button variant="contained" color={this.props.color} style={{ height: '100%', width: "100%" }} centerRipple="True"
-                onClick={(() => {
-                    if ((Number(this.props.count) + 1) % 5 !== 0) {
-                        return this.selected;
-                    } else {
-                        return this.unselected;
-                    }
-                })()
-                } > { this.props.name}</ Button>
+            <div style={{ width: "100%", height: "100%", padding: "auto", margin: 0 }}>
+                {/* {this.props.name} */}
+                <button
+                    style={{
+                        margin: 0,
+                        width: "100%",
+                        height: "100%",
+                        padding: 0,
+                        backgroundColor: this.props.color,
+                        border: "None",
+                        borderRadius: "10%",
+                        color: "#ffffff"
+                    }}
+                    centerRipple="True"
+                    onClick={(() => {
+                        if ((Number(this.props.count) + 1) % 5 !== 0) {
+                            return this.selected;
+                        } else {
+                            return this.unselected;
+                        }
+                    })()
+                    } >{this.props.name}
+                </ button>
+            </div >
+
         );
     }
 }

@@ -9,7 +9,7 @@ export default class Fu extends React.Component {
     constructor(props) {
         super(props);
         this.bgc = this.setBgc(props.fu)
-        this.style = { maxWidth: '500px', maxHeight: '200px', margin: '32px auto', backgroundColor: this.bgc }
+        this.style = { maxWidth: '500px', maxHeight: '200px', margin: 'auto auto', backgroundColor: this.bgc }
     }
 
     setBgc = (fu) => {
@@ -32,7 +32,7 @@ export default class Fu extends React.Component {
 
     render() {
         return (
-            <Grid item xs={3}>
+            <Grid item xs={12} sm={4} md={3}>
                 <Card
                     key={this.props.name}
                     style={this.style}

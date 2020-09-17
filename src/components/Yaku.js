@@ -8,10 +8,10 @@ export default class Yaku extends React.Component {
 
     render() {
         return (
-            <Grid item xs={3}>
+            <Grid item xs={12} sm={4} md={3}>
                 <Card
                     key={this.props.name}
-                    style={{ maxWidth: '500px', maxHeight: '200px', margin: '32px auto' }}
+                    style={{ maxWidth: '500px', maxHeight: '200px', margin: 'auto' }}
                 >
                     <CardContent>
                         <Typograpy type="title">{this.props.name}</Typograpy>

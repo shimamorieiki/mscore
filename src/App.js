@@ -111,6 +111,7 @@ class App extends Component {
             <Route exact path="/yaku" component={YakuList} />
             <Route exact path="/fu" component={FuList} />
             <Route exact path="/scoretable" component={CulcTable} />
+            <Route component={Score} />
           </Switch>
         </div>
       </div >
