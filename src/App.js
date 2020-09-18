@@ -22,10 +22,10 @@ class App extends Component {
 
         <div style={{ marginTop: 50, padding: 32 }}>
           <Switch>
-            <Route exact path="/" component={Score} />
-            <Route exact path="/yaku" component={YakuList} />
-            <Route exact path="/fu" component={FuList} />
-            <Route exact path="/scoretable" component={CulcTable} />
+            <Route exact path="/mscore/" component={Score} />
+            <Route exact path="/mscore/yaku" component={YakuList} />
+            <Route exact path="/mscore/fu" component={FuList} />
+            <Route exact path="/mscore/scoretable" component={CulcTable} />
             <Route component={Score} />
           </Switch>
         </div>

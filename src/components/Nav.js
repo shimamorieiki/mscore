@@ -14,28 +14,28 @@ export default function Nav({ onClick }) {
             <ListItem
                 button
                 key={'点数計算'}
-                onClick={() => onClick("/")}
+                onClick={() => onClick("/mscore/")}
             >
                 <ListItemText primary={'点数計算'} />
             </ListItem>
             <ListItem
                 button
                 key={'役一覧'}
-                onClick={() => onClick("/yaku")}
+                onClick={() => onClick("/mscore/yaku")}
             >
                 <ListItemText primary={'役一覧'} />
             </ListItem>
             <ListItem
                 button
                 key={'符計算一覧'}
-                onClick={() => onClick("/fu")}
+                onClick={() => onClick("/mscore/fu")}
             >
                 <ListItemText primary={'符計算一覧'} />
             </ListItem>
             <ListItem
                 button
                 key={'計算表'}
-                onClick={() => onClick("/scoretable")}
+                onClick={() => onClick("/mscore/scoretable")}
             >
                 <ListItemText primary={'計算表'} />
             </ListItem>
