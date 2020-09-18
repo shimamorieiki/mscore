@@ -13,11 +13,10 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-// import Nav from '../containers/Nav'
-// import List, { ListItem, ListItemText } from '@material-ui/List';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import Nav from '../containers/Nav'
+// import List from '@material-ui/core/List';
+// import ListItem from '@material-ui/core/ListItem';
+// import ListItemText from '@material-ui/core/ListItemText';
 // import { ListItem, ListItemText } from 'material-ui';
 
 const drawerWidth = 240;
@@ -133,8 +132,8 @@ export default function PersistentDrawerLeft({ onClick }) {
                     </IconButton>
                 </div>
                 <Divider />
-                {/* <Nav /> */}
-                <List style={{ width: 240 }}>
+                <Nav />
+                {/* <List style={{ width: 240 }}>
                     <ListItem
                         button
                         key={'点数計算'}
@@ -163,7 +162,7 @@ export default function PersistentDrawerLeft({ onClick }) {
                     >
                         <ListItemText primary={'計算表'} />
                     </ListItem>
-                </List>
+                </List> */}
             </SwipeableDrawer>
         </div>
     );
