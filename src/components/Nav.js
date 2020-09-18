@@ -7,38 +7,36 @@ import List, { ListItem, ListItemText } from 'material-ui/List';
 export default function Nav({ onClick }) {
 
     return (
-        <div>
-            <List style={{ width: 240 }}>
-                <ListItem
-                    button
-                    key={'点数計算'}
-                    onClick={() => onClick("/")}
-                >
-                    <ListItemText primary={'点数計算'} />
-                </ListItem>
-                <ListItem
-                    button
-                    key={'役一覧'}
-                    onClick={() => onClick("/yaku")}
-                >
-                    <ListItemText primary={'役一覧'} />
-                </ListItem>
-                <ListItem
-                    button
-                    key={'符計算一覧'}
-                    onClick={() => onClick("/fu")}
-                >
-                    <ListItemText primary={'符計算一覧'} />
-                </ListItem>
-                <ListItem
-                    button
-                    key={'計算表'}
-                    onClick={() => onClick("/scoretable")}
-                >
-                    <ListItemText primary={'計算表'} />
-                </ListItem>
-            </List>
-        </div>
+        <List style={{ width: 240 }}>
+            <ListItem
+                button
+                key={'点数計算'}
+                onClick={() => onClick("/")}
+            >
+                <ListItemText primary={'点数計算'} />
+            </ListItem>
+            <ListItem
+                button
+                key={'役一覧'}
+                onClick={() => onClick("/yaku")}
+            >
+                <ListItemText primary={'役一覧'} />
+            </ListItem>
+            <ListItem
+                button
+                key={'符計算一覧'}
+                onClick={() => onClick("/fu")}
+            >
+                <ListItemText primary={'符計算一覧'} />
+            </ListItem>
+            <ListItem
+                button
+                key={'計算表'}
+                onClick={() => onClick("/scoretable")}
+            >
+                <ListItemText primary={'計算表'} />
+            </ListItem>
+        </List>
     );
 
 }

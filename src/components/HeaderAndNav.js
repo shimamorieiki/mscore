@@ -6,14 +6,15 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
+// import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Nav from '../containers/Nav'
+// import Nav from '../containers/Nav'
+import List, { ListItem, ListItemText } from 'material-ui/List';
 // import { ListItem, ListItemText } from 'material-ui';
 
 const drawerWidth = 240;
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function PersistentDrawerLeft() {
+export default function PersistentDrawerLeft({ onClick }) {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -129,7 +130,38 @@ export default function PersistentDrawerLeft() {
                     </IconButton>
                 </div>
                 <Divider />
-                <Nav />
+                {/* <Nav /> */}
+                <List style={{ width: 240 }}>
+                    <ListItem
+                        button
+                        key={'点数計算'}
+                        onClick={() => onClick("/")}
+                    >
+                        <ListItemText primary={'点数計算'} />
+                    </ListItem>
+                    <ListItem
+                        button
+                        key={'役一覧'}
+                        onClick={() => onClick("/yaku")}
+                    >
+                        <ListItemText primary={'役一覧'} />
+                    </ListItem>
+                    <ListItem
+                        button
+                        key={'符計算一覧'}
+                        onClick={() => onClick("/fu")}
+                    >
+                        <ListItemText primary={'符計算一覧'} />
+                    </ListItem>
+                    <ListItem
+                        button
+                        key={'計算表'}
+                        onClick={() => onClick("/scoretable")}
+                    >
+                        <ListItemText primary={'計算表'} />
+                    </ListItem>
+                </List>
+    );
             </SwipeableDrawer>
         </div>
     );
