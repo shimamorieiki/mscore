@@ -57,7 +57,7 @@ export default class CulcTableRow extends React.Component {
                                 < TableCell align="center" style={{ backgroundColor: "#ffffff", width: "20%" }}>
                                     {(() => {
                                         if (this.props.role === "child") {
-                                            return <span>満</span>
+                                            return <span>満貫</span>
                                         } else {
                                             return <span>満貫</span>
                                         }
